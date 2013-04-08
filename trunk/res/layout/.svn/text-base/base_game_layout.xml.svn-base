@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center" >
+    
+
+	    <Button
+	        android:id="@+id/bMap"
+	        android:layout_width="100dp"
+	        android:layout_height="wrap_content"
+	        android:text="Map" />
+	    
+	    <Button
+	        android:id="@+id/bConversation"
+	        android:layout_width="125dp"
+	        android:layout_height="wrap_content"
+	        android:text="Conversations" />
+	    
+	    <Button
+	        android:id="@+id/bMiniGames"
+	        android:layout_width="100dp"
+	        android:layout_height="wrap_content"
+	        android:text="MiniGames" />
+	    
+	    
+	</LinearLayout>
+
+</LinearLayout>

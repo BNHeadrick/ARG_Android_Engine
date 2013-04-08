@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <include android:id="@+id/topMenu" layout="@layout/base_game_layout" />
+	
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:text="Texts (Lost? Try checking your map!)"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+	    
+    <ScrollView
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent">
+    
+	    <LinearLayout
+	        android:layout_width="fill_parent"
+	        android:layout_height="fill_parent"
+	        android:orientation="vertical" >
+	        
+		    <LinearLayout 
+		        android:id="@+id/llTexts"
+		        android:layout_width="fill_parent"
+		        android:layout_height="0dp"
+		        android:orientation="vertical"
+		        android:layout_weight="70" />
+		
+		    <EditText
+		        android:id="@+id/etMessageToSend"
+		        android:layout_width="fill_parent"
+		        android:layout_height="0dp"
+		        android:inputType="textShortMessage"
+		        android:layout_weight="10" />
+		
+		    <Button
+		        android:id="@+id/bSendMessage"
+		        android:layout_width="wrap_content"
+		        android:layout_height="0dp"
+		        android:text="Send"
+		        android:layout_weight="10" />
+		        
+		    <Button
+		        android:id="@+id/bCheckMessages"
+		        android:layout_width="wrap_content"
+		        android:layout_height="0dp"
+		        android:text="Check Messages"
+		        android:layout_weight="10" />
+	    
+	    </LinearLayout>
+    
+    </ScrollView>
+    
+</LinearLayout>

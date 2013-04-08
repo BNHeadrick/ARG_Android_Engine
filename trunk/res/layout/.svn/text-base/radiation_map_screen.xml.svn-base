@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+    
+    <include android:id="@+id/topMenu" layout="@layout/base_game_layout"/>
+    
+    <!-- Use your own Google API Key instead of my Debug Key below -->>
+    
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/rlMapParent"
+		    android:layout_height="wrap_content"
+		    android:layout_width="wrap_content">
+        
+		<view class="com.google.android.maps.MapView"
+	    	xmlns:android="http://schemas.android.com/apk/res/android"
+	    	android:id="@+id/mvMap"
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="fill_parent"
+	    	android:apiKey="0aZHkufZvkGGygq5iQu1MD5KfT3GTIUhx8HuF4Q"
+	    	android:clickable="true"
+	    	android:longClickable="true" />
+		
+		<TableLayout
+		    xmlns:android="http://schemas.android.com/apk/res/android"
+		    android:id="@+id/tlPopUp"
+		    android:layout_height="wrap_content"
+		    android:layout_width="wrap_content"
+		    android:background="@drawable/popupbackground"
+		    android:layout_centerHorizontal="true"
+		    android:padding="10dp"
+		    android:visibility="gone">
+		    
+		    <TableRow >
+		   		<Button android:id="@+id/bClosePopUp" 
+		    	android:text="X"
+			    android:layout_height="wrap_content"
+		    	android:layout_width="wrap_content"
+		    	android:layout_gravity="right"
+		    	android:paddingRight="30dp"
+		    	android:background="#00000000"
+		    	android:textColor="#FFFFFFFF"/>
+		   	</TableRow>
+		    
+		   	<TableRow >
+		   	    <TextView android:id="@+id/tvPopUpTitle"
+			    android:layout_height="wrap_content"
+		    	android:layout_width="wrap_content"
+		    	android:text="PopUp Title"
+		    	android:layout_gravity="center|center_horizontal"
+		    	android:textColor="#FFFFFFFF" />
+		   	</TableRow>
+		   	
+		   	<TableRow >
+		   	    <TextView android:id="@+id/tvPopUpText"
+			    android:layout_height="wrap_content"
+		    	android:layout_width="wrap_content"
+		    	android:text="PopUp Information. Lat , Long , Details..."
+		    	android:textColor="#FFFFFFFF" />
+		   	</TableRow>
+		   	
+		   	<TableRow >
+		   		<Button android:id="@+id/bIAmHere" 
+		    	android:text="I Am Here"
+			    android:layout_height="wrap_content"
+		    	android:layout_width="wrap_content"
+		    	android:layout_gravity="center_horizontal"
+		    	android:visibility="gone"
+		    	android:textColor="#FFFFFFFF"/>
+		   	</TableRow>
+		   	
+		   	<TableRow >
+		   		<Button android:id="@+id/bIDontWanna" 
+		    	android:text="I Don't Want To Do That"
+			    android:layout_height="0dp"
+		    	android:layout_width="0dp"
+		    	android:layout_gravity="center_horizontal"
+		    	android:visibility="gone"
+		    	android:textColor="#FFFFFFFF"/>
+		   	</TableRow>
+		</TableLayout>
+	</RelativeLayout>
+</LinearLayout>

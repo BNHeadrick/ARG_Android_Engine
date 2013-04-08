@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:gravity="center"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Settings"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/tvTimeLimit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter the time limit for the game (minutes)"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+    <EditText
+        android:id="@+id/settingsTimeLimit"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"/>
+    
+    <CheckBox android:id="@+id/settingsCheating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cheating Enabled" />
+    
+    <TextView
+        android:id="@+id/settingsQuestXML"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quest XML:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+    <Button
+        android:id="@+id/settingsChooseXML"
+        android:gravity="center"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="default-quest.xml" />
+
+</LinearLayout>

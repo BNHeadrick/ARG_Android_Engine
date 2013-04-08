@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/109/trunk/src/KnowledgeBase
+END
+Method.java
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/52/trunk/src/KnowledgeBase/Method.java
+END
+Axioms.java
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/52/trunk/src/KnowledgeBase/Axioms.java
+END
+Methods.java
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/59/trunk/src/KnowledgeBase/Methods.java
+END
+Operator.java
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/59/trunk/src/KnowledgeBase/Operator.java
+END
+Axiom.java
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/52/trunk/src/KnowledgeBase/Axiom.java
+END
+Operators.java
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/52/trunk/src/KnowledgeBase/Operators.java
+END
+BaseKBObject.java
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/59/trunk/src/KnowledgeBase/BaseKBObject.java
+END

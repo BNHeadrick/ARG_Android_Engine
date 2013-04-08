@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!---->
+<game-info>
+	<allow-checkins>true</allow-checkins>
+	<intro>
+		<id>Intro</id>
+		<layout-type>defaultConversation</layout-type>
+		<dialog>Attention any survivors, if you're reading this, you need to get out of the city.  There should be various drop points in the city.  Reach one and another survivor will try to make contact with you soon.</dialog>
+		<reincorp-object>null</reincorp-object>
+		<pre-condition>null</pre-condition>
+		<post-condition>test-complete</post-condition>
+	</intro>
+	<quest>
+		<id>C1a</id>
+		<layout-type>defaultConversation</layout-type>
+		<dialog>This is a test</dialog>
+		<reincorp-object>dog</reincorp-object>
+		<pre-condition>null</pre-condition>
+		<post-condition>test-complete</post-condition>
+	</quest>
+	<quest>
+		<id>T1a</id>
+		<layout-type>defaultTreasure</layout-type>
+		<dialog>This is a test</dialog>
+		<reincorp-object>cat</reincorp-object>
+		<pre-condition>null</pre-condition>
+		<post-condition>test-complete</post-condition>
+	</quest>
+	<quest>
+		<id>P1a</id>
+		<layout-type>defaultPuzzle</layout-type>
+		<dialog>This is a test</dialog>
+		<reincorp-object>mouse</reincorp-object>
+		<pre-condition>null</pre-condition>
+		<post-condition>test-complete</post-condition>
+	</quest>
+</game-info>

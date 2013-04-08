@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	package="gatech.svw" android:versionCode="1" android:versionName="0.0">
+	<uses-sdk android:minSdkVersion="7" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> 
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.VIBRATE" />
+
+	<application android:icon="@drawable/icon" android:label="@string/app_name">
+		<uses-library android:name="com.google.android.maps" android:required="true"/>
+
+		<activity android:name=".activity.Splash" android:label="@string/app_name">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+
+		<activity android:name=".activity.TitleScreenActivity" android:label="@string/app_name"
+			android:launchMode="standard">
+			<intent-filter>
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+
+		</activity>
+		
+		<activity android:name=".activity.SettingsActivity" android:label="Settings Screen">
+		</activity>
+		
+		<activity android:name=".activity.ListMenu" android:label="Choose Quest XML" />
+		
+		<activity android:name=".activity.ConversationActivity" android:label="Conversation Screen" android:launchMode="singleTask">
+		</activity>
+		
+		<activity android:name=".activity.RadiationMapActivity" android:label="Map View" android:launchMode="singleTask">
+		</activity>
+		
+		<activity android:name=".activity.PuzzleActivity" android:label="Minigame View" android:launchMode="singleTask">
+		</activity>
+		    
+		<activity android:name=".activity.QuestDealerActivity" android:label="" android:launchMode="singleTask">
+		</activity>
+
+	</application>
+</manifest>

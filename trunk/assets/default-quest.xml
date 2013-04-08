@@ -1,0 +1,2761 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<game-info>
+
+<quest name="GIFT OF THE GODS 5">
+	<!-- GIFT OF THE GODS 5-->
+	<task name="gift-ground_treasure">
+        <params>
+            <param id="" />
+        </params>
+        
+        <methods>
+            <method name="get_ground_candy">
+                <subtask name="minigame-find_candy" />
+				<subtask name="meth-at-candy" />
+				
+            </method>
+			<method name="get_ground_porkchop">
+                <subtask name="minigame-find_porkchop" />
+				<subtask name="meth-at-porkchop" />
+            </method>
+			<method name="get_ground_cat">
+                <subtask name="minigame-find_cat" />
+				<subtask name="meth-at-cat" />
+            </method>
+			<method name="get_cryptic_map">
+                <subtask name="minigame-find_map" />
+				<subtask name="meth-at-map" />
+            </method>
+        </methods>
+    </task>
+   
+    <task name="minigame-find_candy">
+        <postconditions>
+            <operator>
+				<remove-axioms>
+					<axiom name="at" ignore-params="true" />
+                </remove-axioms>
+                <add-axioms>
+                    <axiom name="candy" />
+                    <axiom name="candycat" />
+                    <axiom name="at">
+                        <param>street corner</param>
+                    </axiom>
+                </add-axioms>
+            </operator>
+			<operator>
+			</operator>
+			<operator>
+			</operator>
+        </postconditions>
+        <content type="minigame">
+			<location id="street corner" />
+            <trigger near="street corner" />
+			<trigger wait="900" />
+			<trigger reply="skip"/>
+        </content>
+    </task>
+	
+	<task name="meth-at-candy">
+		<preconditions>
+			<axiom name="at">
+                <param>street corner</param>
+				
+            </axiom>
+		</preconditions>
+        <params>
+            <param id="" />
+        </params>
+        
+        <methods>
+		
+            <method name="meth-find-candy">
+				<preconditions>
+					<axiom name="at">
+					<param>street corner</param>
+					</axiom>
+				</preconditions>
+                <subtask name="conversation-find-candy" />
+			</method>
+        </methods>
+    </task>
+	
+	<task name="conversation-find-candy">
+        <postconditions>
+            <operator>
+				<remove-axioms>
+					<axiom name="at" ignore-params="true" />
+                </remove-axioms>
+            </operator>
+			<operator>
+			</operator>
+        </postconditions>
+        <content type="conversation">
+            <name>Self</name>
+            <body>Look at that, I found candy!</body>
+			<location id="street corner" />
+            <trigger near="street corner" />
+			<trigger wait="900" />
+        </content>
+    </task>
+	
+	<task name="minigame-find_porkchop">
+        <postconditions>
+            <operator>
+				<remove-axioms>
+					<axiom name="at" ignore-params="true" />
+                </remove-axioms>
+                <add-axioms>
+                    <axiom name="porkchop" />
+                    <axiom name="porkchopfood" />
+                    <axiom name="at">
+                        <param>valley</param>
+                    </axiom>
+                </add-axioms>
+            </operator>
+			<operator>
+			</operator>
+			<operator>	
+			</operator>
+        </postconditions>
+        <content type="minigame">
+			<location id="valley" desc="A windy valley" />
+			
+            <trigger near="valley" />
+			<trigger wait="900" />
+			<trigger reply="skip"/>
+        </content>
+    </task>
+	
+	<task name="meth-at-porkchop">
+		<preconditions>
+			<axiom name="at">
+                <param>valley</param>
+            </axiom>
+		</preconditions>
+        <params>
+            <param id="" />
+        </params>
+        
+        <methods>
+		
+            <method name="meth-find-porkchop">
+				<preconditions>
+					<axiom name="at">
+					<param>valley</param>
+					</axiom>
+				</preconditions>
+                <subtask name="conversation-find-porkchop" />
+			</method>
+        </methods>
+    </task>
+	
+	<task name="conversation-find-porkchop">
+        <postconditions>
+            <operator>
+				<remove-axioms>
+					<axiom name="at" ignore-params="true" />
+                </remove-axioms>
+            </operator>
+			<operator>
+			</operator>
+        </postconditions>
+        <content type="conversation">
+            <name>Self</name>
+            <body>Look at that, I found an oddly non-rotten porkchop!</body>
+			<location id="valley" />
+            <trigger near="valley" />
+			<trigger wait="900" />
+        </content>
+    </task>
+	
+	<task name="minigame-find_cat">
+        <postconditions>
+            <operator>
+				<remove-axioms>
+					<axiom name="at" ignore-params="true" />
+                </remove-axioms>
+                <add-axioms>
+                    <axiom name="cat" />
+                    <axiom name="candycat" />
+                    <axiom name="at">
+                        <param>sand box</param>
+                    </axiom>
+                </add-axioms>
+            </operator>
+			<operator>
+			</operator>
+			<operator>
+			</operator>
+        </postconditions>
+        <content type="minigame">
+			<location id="sand box" />
+            <trigger near="sand box" />
+			<trigger wait="900" />
+			<trigger reply="skip" />
+        </content>
+    </task>
+	
+	<task name="meth-at-cat">
+		<preconditions>
+			<axiom name="at">
+                <param>sand box</param>
+				
+            </axiom>
+		</preconditions>
+        <params>
+            <param id="" />
+        </params>
+        
+        <methods>
+		
+            <method name="meth-find-cat">
+				<preconditions>
+					<axiom name="at">
+					<param>sand box</param>
+					</axiom>
+				</preconditions>
+                <subtask name="conversation-find-cat" />
+			</method>
+        </methods>
+    </task>
+	
+	<task name="conversation-find-cat">
+        <postconditions>
+            <operator>
+				<remove-axioms>
+					<axiom name="at" ignore-params="true" />
+                </remove-axioms>
+            </operator>
+			<operator>
+			</operator>
+        </postconditions>
+        <content type="conversation">
+            <name>Self</name>
+            <body>Hey look, it's a not-very mangy cat!  I'mma pet you now!</body>
+			<location id="sand box" />
+            <trigger near="sand box" />
+			<trigger wait="900" />
+        </content>
+    </task>
+	
+	<task name="minigame-find_map">
+        <postconditions>
+            <operator>
+				<remove-axioms>
+					<axiom name="at" ignore-params="true" />
+                </remove-axioms>
+                <add-axioms>
+                    <axiom name="map" />
+                    <axiom name="maptool" />
+                    <axiom name="at">
+                        <param>trash can</param>
+                    </axiom>
+                </add-axioms>
+            </operator>
+			<operator>
+			</operator>
+			<operator>
+			</operator>
+        </postconditions>
+        <content type="minigame">
+            
+			<location id="trash can" />
+            <trigger near="trash can" />
+			<trigger wait="900" />
+			<trigger reply="skip" />
+        </content>
+    </task>
+	
+	<task name="meth-at-map">
+		<preconditions>
+			<axiom name="at">
+                <param>trash can</param>
+            </axiom>
+		</preconditions>
+        <params>
+            <param id="" />
+        </params>
+        
+        <methods>
+		
+            <method name="meth-find-map">
+				<preconditions>
+					<axiom name="at">
+					<param>trash can</param>
+					</axiom>
+				</preconditions>
+                <subtask name="conversation-find-map" />
+			</method>
+        </methods>
+    </task>
+	
+	<task name="conversation-find-map">
+        <postconditions>
+            <operator>
+				<remove-axioms>
+					<axiom name="at" ignore-params="true" />
+                </remove-axioms>
+            </operator>
+			<operator>
+			</operator>
+        </postconditions>
+        <content type="conversation">
+            <name>Self</name>
+            <body>Look at that, I found a map!  I'm sure it will lead me to great adventures!</body>
+			<location id="trash can" />
+            <trigger near="trash can" />
+			<trigger wait="900" />
+        </content>
+    </task>
+	
+    <task name="gift-animal_mouth">
+        <params>
+
+            <param id="location" />
+        </params>
+        <methods>
+
+            <method name="gift-animal_mouth_money">
+
+                <!-- extra pre conditions (optional) -->
+
+                <subtask name="gift-animal_mouth_money">
+
+                </subtask>
+
+            </method>
+            <method name="gift-animal_mouth_food">
+                <!-- extra pre conditions (optional) -->
+                <subtask name="gift-animal_mouth_food">
+                </subtask>
+            </method>
+            <method name="gift-animal_mouth_tool">
+                <!-- extra pre conditions (optional) -->
+                <subtask name="gift-animal_mouth_tool">
+                </subtask>
+            </method>
+        </methods>
+    </task>
+
+    
+    <task name="gift-animal_mouth_money">
+        <params>
+            <param id="name" />
+        </params>
+        <params>
+            <param id="amount" />
+        </params>
+
+        <preconditions>
+
+        </preconditions>
+        <postconditions>
+            <operator>
+                <add-axioms>
+                    <axiom name="money" />
+					<axiom name="moneyfood" />
+					<axiom name="bombghoulmoney" />
+                </add-axioms>
+            </operator>
+        </postconditions>
+
+        <content type="conversation">
+            <!-- type == treasure -->
+            <!--??? -->
+			<name> Dog </name>
+			<body> Here's some money.  I'm a talking dog!  I mean...meowzer! </body>
+        </content>
+    </task>
+
+    
+    <task name="gift-animal_mouth_food">
+        <params>
+            <param id="name" />
+        </params>
+        <params>
+            <param id="food" />
+        </params>
+        <preconditions>
+        </preconditions>
+        <postconditions>
+            <operator>
+                <add-axioms>
+                    <axiom name="food" />
+					<axiom name="moneyfood" />
+					<axiom name="porkchopfood" />
+                </add-axioms>
+            </operator>
+
+        </postconditions>
+
+        <content type="conversation">
+            <name> Dog </name>
+			<body> Here's some food.  I'm a talking dog!  I mean...meowzer! </body>
+        </content>
+    </task>
+
+    
+    <task name="gift-animal_mouth_tool">
+        <params>
+            <param id="name" />
+        </params>
+        <params>
+            <param id="tool" />
+        </params>
+        <preconditions>
+        </preconditions>
+        <postconditions>
+            <operator>
+                <add-axioms>
+                    <axiom name="tool" />
+                    <axiom name="maptool" />
+                </add-axioms>
+            </operator>
+
+        </postconditions>
+
+        <content type="conversation">
+            <name> Dog </name>
+			<body> Here's a tool.  I'm a talking dog!  I mean...meowzer! </body>
+        </content>
+    </task>
+</quest>
+
+<quest name="TEMPTRESS HILTER">
+	<!--  a temptress series -->	
+	<task name="temptress-suspicious_message">
+		<preconditions>
+			<axiom name="moneyfood" />
+		</preconditions>
+		<methods>
+			<method name="stumble_upon_note-b">
+				<preconditions>
+					<axiom name="food" />
+				</preconditions>
+				<subtask name="minigame-find_suspicious_note" /> <!--  -->
+				<subtask name="hilters_note" />
+			</method>
+			<method name="rcv_msg-b">
+				<preconditions>
+					<axiom name="food" />
+				</preconditions>
+				<subtask name="convo-the_suspicious_msg" /> <!--  -->
+				<subtask name="wait_for_a_bit" /> <!--  -->
+				<subtask name="convo-inner_reflection_on_note" /> <!--  -->
+				<subtask name="minigame-suspicious_testing_grounds" /> <!--  -->
+				<subtask name="the_suspicious_results" /> <!--  -->
+			</method>
+			<method name="stumble_upon_note">
+				<preconditions>
+					<axiom name="money" />
+				</preconditions>
+				<subtask name="minigame-find_suspicious_note" /> <!--  -->
+				<subtask name="hilters_note" />
+			</method>
+			<method name="rcv_msg">
+				<preconditions>
+					<axiom name="money" />
+				</preconditions>
+				<subtask name="convo-the_suspicious_msg" /> <!--  -->
+				<subtask name="wait_for_a_bit" /> <!--  -->
+				<subtask name="convo-inner_reflection_on_note" /> <!--  -->
+				<subtask name="minigame-suspicious_testing_grounds" /> <!--  -->
+				<subtask name="the_suspicious_results" /> <!--  -->
+			</method>
+		</methods>
+	</task>
+	
+	<task name="hilters_note">
+		<preconditions>
+			<axiom name="hilters_note" />
+		</preconditions>
+		<methods>
+			<method name="continue_quest">
+				<preconditions>
+					<axiom name="at">
+						<param>suspicious_note</param>
+					</axiom>
+				</preconditions>
+				<subtask name="convo-the_suspicious_note" /> <!--   -->
+				<subtask name="wait_for_a_bit" /> <!--  -->
+				<subtask name="convo-inner_reflection_on_note" /> <!--  -->
+				<subtask name="minigame-suspicious_testing_grounds" /> <!--  -->
+				<subtask name="the_suspicious_results" /> <!--  -->
+			</method>
+		</methods>
+	</task>
+
+	<task name="minigame-find_suspicious_note">
+		<postconditions>
+			<operator>
+				<remove-axioms>
+					<axiom name="at" ignore-params="true" />
+				</remove-axioms>
+				<add-axioms>
+					<axiom name="at">
+						<param>suspicious_note</param>
+					</axiom>
+					<axiom name="hilters_note" />
+				</add-axioms>
+			</operator>
+			<operator>
+				<add-axioms>
+					<axiom name="hilters_note" />
+				</add-axioms>
+			</operator>
+			<operator>
+				<add-axioms>
+					<axiom name="hilters_note" />
+				</add-axioms>
+			</operator>
+		</postconditions>
+		<content type="minigame">
+			<location id="A mysterious note" desc="There appears to be a note wedged between two stones here..." />
+			<trigger at="A mysterious note" />
+			<trigger wait="900" />
+			<trigger reply="skip" />
+		</content>
+	</task>
+	
+	<task name="convo-the_suspicious_note">
+		<content type="conversation">
+			<name>The mystery note</name>
+			<body>Greetings friend! I am glad to see that you are in good health. This is a perfect turn of events, for I have just come up with an invention to revolutionize the way you survive this new, dreary world! Ah, please excuse for not having introduced myself earlier, I am Dr. Hilter, the world's leading radiation scientist and I am proud to finally release a perfect radiation suit! With this suit you will no longer have to fear suffering the horrific effects of ghoulification! Please comes to my lab straight away so that we can begin testing! You'll receive the coordinates of my lab shortly.</body>
+		</content>
+	</task>
+	
+	<task name="convo-the_suspicious_msg">
+		<content type="conversation">
+			<name>Dr. Hilter</name>
+			<body>Greetings friend! I am glad to see that you are in good health. This is a perfect turn of events, for I have just come up with an invention to revolutionize the way you survive this new, dreary world! Ah, please excuse for not having introduced myself earlier, I am Dr. Hilter, the world's leading radiation scientist and I am proud to finally release a perfect radiation suit! With this suit you will no longer have to fear suffering the horrific effects of ghoulification! Please comes to my lab straight away so that we can begin testing! You'll receive the coordinates of my lab shortly.</body>
+		</content>
+	</task>
+	
+	<task name="wait_for_a_bit">
+		<content type="minigame">
+			<trigger wait="30" />
+		</content>
+	</task>
+	
+	<task name="convo-inner_reflection_on_note">
+		<content type="conversation">
+			<name>Some self Reflection</name>
+			<body>This seems almost too good to be true. There hasn't been nearly enough time for an invention of this magnitude to have been developed. I'm not sure I can trust Dr. Hilter... Maybe I should tell him I'm not interested...</body>
+		</content>
+	</task>
+	
+	<task name="minigame-suspicious_testing_grounds">
+		<postconditions>
+			<operator>
+				<remove-axioms>
+					<axiom name="at" ignore-params="true" />
+				</remove-axioms>
+				<add-axioms>
+					<axiom name="at">
+						<param>testing_grounds</param>
+					</axiom>
+					<axiom name="hilter2" />
+				</add-axioms>
+			</operator>
+			<operator>
+				<add-axioms>
+					<axiom name="declined">
+						<param>radiation suit</param>
+					</axiom>
+					<axiom name="hilter2" />
+				</add-axioms>
+			</operator>
+			<operator>
+				<add-axioms>
+					<axiom name="hilter2" />
+				</add-axioms>
+			</operator>
+			<operator>
+				<add-axioms>
+					<axiom name="hilter2" />
+				</add-axioms>
+			</operator>
+		</postconditions>
+		<content type="minigame">
+			<location id="Radiation Testing Grounds" desc="Dr. Hilter will let me test his Radiation Suit here.." />
+			<trigger at="Radiation Testing Grounds" />
+			<trigger reply="no" />
+			<trigger reply="skip" />
+			<trigger wait="900" />
+		</content>
+	</task>
+
+	<task name="the_suspicious_results">
+		<preconditions>
+			<axiom name="hilter2" />
+		</preconditions>
+		<methods>
+			<method name="fell_for_it_like_an_idiot">
+				<preconditions>
+					<axiom name="at">
+						<param>testing_grounds</param>
+					</axiom>
+				</preconditions>
+				<subtask name="convo-hilters_sickness" /> <!--  -->
+				<subtask name="minigame-finding_the_cure" /> <!--  -->
+				<subtask name="the_end_of_hilter" />
+			</method>
+			<method name="had_some_common_sense">
+				<preconditions>
+					<axiom name="declined">
+						<param>radiation suit</param>
+					</axiom>
+				</preconditions>
+				<subtask name="convo-hilters_remorse" /> <!--  -->
+			</method>
+		</methods>
+	</task>
+	
+	<task name="the_end_of_hilter">
+		<preconditions>
+			<axiom name="hilter_end" />
+		</preconditions>
+		<methods>
+			<method name="hilters_end">
+				<preconditions>
+					<axiom name="hilters_poisonous_betrayal" />
+				</preconditions>
+				<subtask name="convo-feeling_better" /> <!--  -->
+			</method>
+		</methods>
+	</task>
+	
+	<task name="convo-hilters_sickness">
+		<postconditions>
+			<operator>
+				<add-axioms>
+					<axiom name="radiation poisoning" />
+				</add-axioms>
+				<remove-axioms>
+					<axiom name="food" />
+					<axiom name="money" />
+				</remove-axioms>
+			</operator>
+		</postconditions>
+		<content type="conversation">
+			<name>Dr. Hilter</name>
+			<body>Thanks for coming to test my radiation suit, that'll be... all the food any money you've got!
+			
+Oh yeah, and... you are a fool! This was all my trap! This suit will continually poison you until you are nothing but a ghoul! I will go down in history as a god! Don't even bother searching for a cure, I didn't make on just for this specific occasion!</body>
+		</content>
+	</task>
+	
+	<task name="minigame-finding_the_cure">
+		<postconditions>
+			<operator>
+				<add-axioms>
+					<axiom name="hilters_poisonous_betrayal" />
+					<axiom name="hilter_end" />
+				</add-axioms>
+			</operator>
+			<operator>
+				<add-axioms>
+					<axiom name="hilter_end" />
+				</add-axioms>
+			</operator>
+			<operator>
+				<add-axioms>
+					<axiom name="hilter_end" />
+				</add-axioms>
+			</operator>
+		</postconditions>
+		<content type="minigame">
+			<location id="A mysterious potion" desc="It's worth a try..." />
+			<trigger at="A mysterious potion" />
+			<trigger wait="900" />
+			<trigger reply="skip" />
+		</content>
+	</task>
+
+	<task name="convo-feeling_better">
+		<postconditions>
+			<operator>
+				<remove-axioms>
+					<axiom name="radiation poisoning" />
+				</remove-axioms>
+			</operator>
+		</postconditions>
+		<content type="conversation">
+			<name>A heavy sigh of relief</name>
+			<body>Looks like that did the trick. I'm feeling much better now, I'd better avoid Dr. Hilter from now on...</body>
+		</content>
+	</task>
+	
+	<task name="convo-hilters_remorse">
+		<content type="conversation">
+			<name>Dr. Hilter</name>
+			<body>You are a fool for not trusting me! Have fun being devoured by the ghouls, I could have offered you immortality!</body>
+		</content>
+	</task>
+	
+	<!-- end (a temptress) -->
+</quest>
+
+<quest name="TEMPTRESS SEXY GIRL--I MEAN GHOUL">
+	<!-- temptress: the sexiest ghoul you'll ever meat! -->
+	
+	<task name="temptress-a_forbidden_encounter">
+		<preconditions>
+			<axiom name="candycat" />
+		</preconditions>
+		<methods>
+			<method name="meeting_the_damsel-b">
+				<preconditions>
+					<axiom name="cat" />
+				</preconditions>
+				<subtask name="convo-the_damsel_1b" />
+				<subtask name="minigame-reply_to_her_1" /> <!--  -->
+				<subtask name="the_damsels_response" /> <!--  -->
+			</method>
+			<method name="meeting_the_damsel">
+				<preconditions>
+					<axiom name="candy" />
+				</preconditions>
+				<subtask name="convo-the_damsel_1" />
+				<subtask name="minigame-reply_to_her_1" /> <!--  -->
+				<subtask name="the_damsels_response" /> <!--  -->
+			</method>
+		</methods>
+	</task>
+	
+	<task name="the_damsels_response">
+		<preconditions>
+			<axiom name="damsel2" />
+		</preconditions>
+		<methods>
+			<method name="willing_to_help_a_stranger">
+				<preconditions>
+					<axiom name="help-damsel" />
+				</preconditions>
+				<subtask name="convo-the_damsel_3" /> <!--  -->
+				<subtask name="minigame-go_to_her" /> <!--  -->
+				<subtask name="bad_move_lover_boy" />
+			</method>
+			<method name="willing_to_ignore_a_stranger">
+				<preconditions>
+					<axiom name="ignore-damsel" />
+				</preconditions>
+				<subtask name="convo-the_damsel_4" /> <!--  -->
+				<subtask name="minigame-reply_to_her_2" /> <!--  -->
+				<subtask name="the_damsels_response_2" />
+			</method>
+		</methods>
+	</task>
+	
+	<task name="bad_move_lover_boy">
+		<preconditions>
+			<axiom name="bad_move_lover_boy" />
+		</preconditions>
+		<methods>
+			<method name="get_down_and_dead">
+				<preconditions>
+					<axiom name="at">
+						<param>the_damsel</param>
+					</axiom>
+				</preconditions>			
+				<subtask name="convo-the_damsel_5" /> <!--  -->
+				<subtask name="convo-the_damsel_6" /> <!--  -->
+				<subtask name="convo-the_damsel_7" /> <!--  -->
+				<subtask name="convo-the_damsel_8" /> <!--  -->
+			</method>
+		</methods>
+	</task>
+	
+	<task name="the_damsels_response_2">
+		<preconditions>
+			<axiom name="damsel3" />
+		</preconditions>
+		<methods>
+			<method name="willing_to_help_a_stranger_again">
+				<preconditions>
+					<axiom name="help-damsel-2" />
+				</preconditions>
+				<subtask name="convo-the_damsel_3" /> <!--  -->
+				<subtask name="minigame-go_to_her" /> <!--  -->
+				<subtask name="convo-the_damsel_5" /> <!--  -->
+				<subtask name="convo-the_damsel_6" /> <!--  -->
+				<subtask name="convo-the_damsel_7" /> <!--  -->
+				<subtask name="convo-the_damsel_8" /> <!--  -->
+			</method>
+			<method name="willing_to_ignore_a_stranger_again">
+				<preconditions>
+					<axiom name="ignore-damsel-again" />
+				</preconditions>
+				<subtask name="convo-the_damsel_9" /> <!--  -->
+			</method>
+		</methods>
+	</task>
+	
+	<task name="convo-the_damsel_9">
+		<content type="conversation">
+			<name>Distressed Damsel</name>
+			<body>Ugh, you are the absolute WORST. I bet you smell bad anyway, god, I don't even want your help!</body>
+		</content>
+	</task>
+	
+	<task name="convo-the_damsel_8">
+		<postconditions>
+			<operator>
+				<add-axioms>
+					<axiom name="ghoulified" />
+					<axiom name="bombghoulmoney" />
+				</add-axioms>
+				<remove-axioms>
+					<axiom name="not-ghoul" />
+				</remove-axioms>
+			</operator>
+		</postconditions>
+		<content type="conversation">
+			<name>Ghoulish Damsel</name>
+			<body>Mmmmm, I can see you're already begining your transformation.
+			
+xoxo</body>
+		</content>
+	</task>
+	
+	<task name="convo-the_damsel_7">
+		<content type="conversation">
+			<name>My Inner Fear</name>
+			<body>I am paralyzed with terror as the ghoul inches her face closer to mine. As if she thought it was acceptable, she begins to lick the blood out from around my eyes.</body>
+		</content>
+	</task>
+	
+	<task name="convo-the_damsel_6">
+		<content type="conversation">
+			<name>Ghoulish Damsel</name>
+			<body>Hey there big boy! xoxo
+Now that you're with me, we can stay here and live forever ever after. Here, let me get that off your face for you.</body>
+		</content>
+	</task>
+	
+	<task name="convo-the_damsel_5">
+		<content type="conversation">
+			<name>My Inner Fear</name>
+			<body>As I finally walk up to her, I'm able to catch a glimpse of this beautiful maiden whom I've been pining for. But, where she is should be standing, I can only see a horrific ghoul! My eyes begin to bleed at the very sight of her. "I am a fool!" I thought to myself. How could I have been so foolish to risk my life for this trickster. I can only feel like I should have seen this coming...</body>
+		</content>
+	</task>
+	
+	<task name="minigame-go_to_her">
+		<postconditions>
+			<operator>
+				<remove-axioms>
+					<axiom name="at" ignore-params="true" />
+				</remove-axioms>
+				<add-axioms>
+					<axiom name="at">
+						<param>the_damsel</param>
+					</axiom>
+					<axiom name="bad_move_lover_boy" />
+				</add-axioms>
+			</operator>
+			<operator>
+				<add-axioms>
+					<axiom name="bad_move_lover_boy" />
+				</add-axioms>
+			</operator>
+			<operator>
+				<add-axioms>
+					<axiom name="bad_move_lover_boy" />
+				</add-axioms>
+			</operator>
+		</postconditions>
+		<content type="minigame">
+			<location id="The Distressed Damsel" desc="She really wants my help... bad!"/>
+			<trigger at="The Distressed Damsel" />
+			<trigger wait="900" />
+			<trigger reply="skip" />
+		</content>
+	</task>
+	
+	<task name="minigame-reply_to_her_2">
+		<postconditions>
+			<operator> <!-- no -->
+				<add-axioms>
+					<axiom name="ignore-damsel-again" />
+					<axiom name="damsel3" />
+				</add-axioms>
+				<remove-axioms>
+					<axiom name="damsel2" />
+				</remove-axioms>
+			</operator>
+			<operator> <!-- wont -->
+				<add-axioms>
+					<axiom name="ignore-damsel-again" />
+					<axiom name="damsel3" />
+				</add-axioms>
+				<remove-axioms>
+					<axiom name="damsel2" />
+				</remove-axioms>
+			</operator>
+			<operator> <!-- won't -->
+				<add-axioms>
+					<axiom name="ignore-damsel-again" />
+					<axiom name="damsel3" />
+				</add-axioms>
+				<remove-axioms>
+					<axiom name="damsel2" />
+				</remove-axioms>
+			</operator>
+			<operator> <!-- hero -->
+				<add-axioms>
+					<axiom name="help-damsel-2" />
+					<axiom name="damsel3" />
+				</add-axioms>
+				<remove-axioms>
+					<axiom name="damsel2" />
+				</remove-axioms>
+			</operator>
+			<operator> <!-- change -->
+				<add-axioms>
+					<axiom name="help-damsel-2" />
+					<axiom name="damsel3" />
+				</add-axioms>
+				<remove-axioms>
+					<axiom name="damsel2" />
+				</remove-axioms>
+			</operator>
+			<operator> <!-- fine -->
+				<add-axioms>
+					<axiom name="help-damsel-2" />
+					<axiom name="damsel3" />
+				</add-axioms>
+				<remove-axioms>
+					<axiom name="damsel2" />
+				</remove-axioms>
+			</operator>
+			<operator> <!-- ok -->
+				<add-axioms>
+					<axiom name="help-damsel-2" />
+					<axiom name="damsel3" />
+				</add-axioms>
+				<remove-axioms>
+					<axiom name="damsel2" />
+				</remove-axioms>
+			</operator>
+			<operator> <!-- sure -->
+				<add-axioms>
+					<axiom name="help-damsel-2" />
+					<axiom name="damsel3" />
+				</add-axioms>
+				<remove-axioms>
+					<axiom name="damsel2" />
+				</remove-axioms>
+			</operator>
+			<operator> <!-- yes -->
+				<add-axioms>
+					<axiom name="help-damsel-2" />
+					<axiom name="damsel3" />
+				</add-axioms>
+				<remove-axioms>
+					<axiom name="damsel2" />
+				</remove-axioms>
+			</operator>
+			<operator> <!-- skip -->
+				<add-axioms>
+					<axiom name="ignore-damsel-again" />
+					<axiom name="damsel3" />
+				</add-axioms>
+				<remove-axioms>
+					<axiom name="damsel2" />
+				</remove-axioms>
+			</operator>
+			<operator> <!-- wait -->
+				<add-axioms>
+					<axiom name="ignore-damsel-again" />
+					<axiom name="damsel3" />
+				</add-axioms>
+				<remove-axioms>
+					<axiom name="damsel2" />
+				</remove-axioms>
+			</operator>
+		</postconditions>
+		<content type="minigame">
+			<trigger reply="no" />
+			<trigger reply="wont" />
+			<trigger reply="won't" />
+			<trigger reply="hero" />
+			<trigger reply="change" />
+			<trigger reply="fine" />
+			<trigger reply="ok" />
+			<trigger reply="sure" />
+			<trigger reply="yes" />
+			<trigger reply="skip" />
+			<trigger wait="900" />
+		</content>
+	</task>
+	
+	<task name="convo-the_damsel_4">
+		<content type="conversation">
+			<name>Distressed Damsel</name>
+			<body>WHAT!?!?!? You would ignore poor, helpless, defenseless me??? I thought you were some kind of hunky hero, but I guess not... :(
+Please tell me you'll change your mind? I'll do ANYTHING for you if you'll just decide to help. ♥♥♥
+			
+			xoxo</body>
+		</content>
+	</task>
+	
+	<task name="convo-the_damsel_3">
+		<content type="conversation">
+			<name>Distressed Damsel</name>
+			<body>Oh thank you, thank you, thank you, thank you! I'm sending you my coordinates now! :)
+			
+			xoxo</body>
+		</content>
+	</task>
+	
+	<task name="convo-the_damsel_1">
+		<postconditions>
+			<operator>
+				<add-axioms>
+					<axiom name="not ghoul" />
+				</add-axioms>
+			</operator>
+		</postconditions>
+		<content type="conversation">
+			<name>Distressed Damsel</name>
+			<body>I see you've got some lovely candies there. Oh won't you please share them with me? Please tell me you'll give them to me. You wouldn't ignore little ol' me, would you? Hurry, please...
+			
+			xoxo</body>
+		</content>
+	</task>
+	
+	<task name="convo-the_damsel_1b">
+		<postconditions>
+			<operator>
+				<add-axioms>
+					<axiom name="not ghoul" />
+				</add-axioms>
+			</operator>
+		</postconditions>
+		<content type="conversation">
+			<name>Distressed Damsel</name>
+			<body>I see you've got a lovely cat there. Oh won't you please let me pet her? Please tell me you'll give her to me. You wouldn't ignore little ol' me, would you? Hurry, please...
+			
+			xoxo</body>
+		</content>
+	</task>
+	
+	<task name="convo-the_damsel_2">
+		<content type="conversation">
+			<name>Distressed Damsel</name>
+			<body>Hey! You're not thinking of abandoning me are you?? :(
+			
+			xoxo</body>
+		</content>
+	</task>
+	
+	<task name="minigame-reply_to_her_1">
+		<postconditions>
+			<operator> <!-- no -->
+				<add-axioms>
+					<axiom name="ignore-damsel" />
+					<axiom name="damsel2" />
+				</add-axioms>
+			</operator>
+			<operator> <!-- wont -->
+				<add-axioms>
+					<axiom name="ignore-damsel" />
+					<axiom name="damsel2" />
+				</add-axioms>
+			</operator>
+			<operator> <!-- won't -->
+				<add-axioms>
+					<axiom name="ignore-damsel" />
+					<axiom name="damsel2" />
+				</add-axioms>
+			</operator>
+			<operator> <!-- help -->
+				<add-axioms>
+					<axiom name="help-damsel" />
+					<axiom name="damsel2" />
+				</add-axioms>
+			</operator>
+			<operator> <!-- save -->
+				<add-axioms>
+					<axiom name="help-damsel" />
+					<axiom name="damsel2" />
+				</add-axioms>
+			</operator>
+			<operator> <!-- rescue -->
+				<add-axioms>
+					<axiom name="help-damsel" />
+					<axiom name="damsel2" />
+				</add-axioms>
+			</operator>
+			<operator> <!-- ok -->
+				<add-axioms>
+					<axiom name="help-damsel" />
+					<axiom name="damsel2" />
+				</add-axioms>
+			</operator>
+			<operator> <!-- yes -->
+				<add-axioms>
+					<axiom name="help-damsel" />
+					<axiom name="damsel2" />
+				</add-axioms>
+			</operator>
+			<operator> <!-- fine -->
+				<add-axioms>
+					<axiom name="help-damsel" />
+					<axiom name="damsel2" />
+				</add-axioms>
+			</operator>
+			<operator> <!-- sure -->
+				<add-axioms>
+					<axiom name="help-damsel" />
+					<axiom name="damsel2" />
+				</add-axioms>
+			</operator>
+			<operator> <!-- wait -->
+				<add-axioms>
+					<axiom name="ignore-damsel" />
+					<axiom name="damsel2" />
+				</add-axioms>
+			</operator>
+			<operator> <!-- skip -->
+				<add-axioms>
+					<axiom name="ignore-damsel" />
+					<axiom name="damsel2" />
+				</add-axioms>
+			</operator>
+		</postconditions>
+		<content type="minigame">
+			<trigger reply="no" />
+			<trigger reply="wont" />
+			<trigger reply="won't" />
+			<trigger reply="help" />
+			<trigger reply="save" />
+			<trigger reply="rescue" />
+			<trigger reply="ok" />
+			<trigger reply="yes" />
+			<trigger reply="fine" />
+			<trigger reply="sure" />
+			<trigger wait="900" />
+			<trigger reply="skip" />
+		</content>
+	</task>
+	
+	<!-- end (a sexy ghoul) -->
+</quest>
+
+<quest name="RETURN">
+	<task name="return">      
+        <methods>
+            <method name="ENDget_extracted">
+                <subtask name="conversation-get_extraction_msg" />
+				<subtask name="minigame-get_extracted" />
+				<subtask name="message-grats" />
+            </method>
+            <method name="ENDcool_drill_bro">
+            	<preconditions>
+            		<axiom name="not ghoul" />
+            	</preconditions>
+            	<subtask name="convo-it_were_not_but_a_drill" />
+            </method>
+            <method name="ENDthe_man_who_wasnt_sick">
+            	<preconditions>
+            		<axiom name="ghoulified" />
+            	</preconditions>
+            	<subtask name="convo-livin_in_radiation" />
+            </method>
+            <method name="ENDfools_part_with_their_money">
+            	<preconditions>
+            		<axiom name="ripped-off" />
+            	</preconditions>
+            	<subtask name="conversation-get_extraction_msg" />
+            	<subtask name="minigame-get_extracted" />
+            	<subtask name="message-grats-jk" />
+            </method>
+        </methods>
+    </task>
+    
+    <task name="convo-livin_in_radiation">
+    	<content type="conversation">
+    		<name>The Ghoul Inside of Me</name>
+    		<body>Somehow I already known, but I chose to ignore it. I had already become a ghoul like so many before me. Am I doomed to wander to the wastes until the sun burns out? Yes. The only upshot to this is that I now drench myself in the radiation as if it were a refreshing Hawaiin Punch waterfall due to my immunity.</body>
+    	</content>
+    </task>
+    
+    <task name="convo-lament_sheer_lament">
+    	<content type="conversation">
+    		<name>My Own Stupditity</name>
+    		<body>I gazed on, speechless as my life flew right out from under me. Given the chance to escape radiation hell, I decided to ignore those who would help me and wallow in my own self pity. If only I had gotten onto the helicopter, maybe I would survive the coming days...</body>
+    	</content>
+    </task>
+    
+    <task name="convo-it_were_not_but_a_drill">
+    	<content type="conversation">
+    		<name>President Eden</name>
+    		<body>Good evening, America. This is your president, John Henry Eden, speaking. I wanted to personally thank you for taking part in this drill. When the time comes, god forbid, for the nuclear apocalypse I know that America will be ready. Remember, America will never be destroyed from the outside. If we falter and lose our freedoms, it will be because we destroyed ourselves.</body>
+    	</content>
+    </task>
+	
+	<task name="conversation-get_extraction_msg">
+        <content type="conversation">
+            <name> Helicopter Pilot </name>
+			<body> Hey buddy, we're getting out of here.  This one's for real!  Here's the coordinates! </body>
+        </content>
+    </task>
+	
+	<task name="minigame-get_extracted">
+        <postconditions>
+        	<operator>
+        		<add-axioms>
+        			<axiom name="escape_from_radiation_island" />
+        			<axiom name="helicopter_escape_2" />
+        		</add-axioms>
+        	</operator>
+        </postconditions>
+        <content type="minigame">
+			<location id="Helipad" desc="Helipad, the savior of man"/>
+            <trigger near="Helipad" />
+        </content>
+    </task>
+	
+	<task name="message-grats">
+        <content type="conversation">
+            <name> Helicopter Pilot </name>
+			<body> Looks like you made it out alive.  Great job! </body>
+        </content>
+    </task>
+    
+    <task name="message-grats-jk">
+        <content type="conversation">
+            <name> Helicopter Pilot </name>
+			<body> Sorry jabroni, we're all full up here. Maybe if you had some more food or money to buy your way your on I might look the other way on the weight limit. Oh well, having fun dying.</body>
+        </content>
+    </task>
+    <!-- end (return) [wip] -->
+</quest>   
+
+<quest name="BELLY BOMB">   
+    <!-- BELLY OF THE WHALE a story in bomb defusal-->
+	<task name="belly-defuse-bomb">
+		<preconditions>
+			<axiom name="cat" />
+		</preconditions>
+   	 <methods>
+   		 <method name="belly-terrorist-bomb-method">
+   			 <subtask name="conversation-get-alert-terrorist-bomb" /> <!--  -->
+   			 <subtask name="belly-find-defuse-reward-bomb" />		<!-- repeated task -->
+   		 </method>
+   		 <method name="belly-nuclear-meltdown-method">
+   			 <subtask name="conversation-get-alert-nuclear-meltdown" /> <!--  -->
+   			 <subtask name="minigame-find-scientist" /> <!--  -->
+   			 <subtask name="the_scientist_branch" /> <!--  -->
+   		 </method>
+   		 <method name="belly-psycho-kid-method">
+   			 <subtask name="conversation-get-alert-psycho-kid" /> <!--  -->
+   			 <subtask name="conversation-get-alert-friend-hostage" /> <!--  -->
+   			 <subtask name="minigame-find-tranquilizer" /> <!--  -->
+   			 <subtask name="the_tranq_dilemma" />
+   		 </method>
+   	 </methods>
+    </task>
+    
+    <task name="the_tranq_dilemma">
+    	<preconditions>
+    		<axiom name="friend-hostage-alert-received" />
+    	</preconditions>
+    	<methods>
+    		<method name="helping_tranq_your_friends">
+    			<preconditions>
+    				<axiom name="tranquilizer-found" />
+    			</preconditions>
+    			<subtask name="minigame-find-psycho-kid" /> <!--  -->
+    			<subtask name="fight_the_psycho" />
+    		</method>
+    		<method name="he_aint_no_friend_of_mine">
+    			<preconditions>
+    				<axiom name="ignoring-the-sweet-sweet-allure-of-a-tranq-gun" />
+    			</preconditions>
+    			<subtask name="convo-dude_comeon_and_help_me_already" />
+    		</method>
+    	</methods>
+    </task>
+    
+    <task name="convo-dude_comeon_and_help_me_already">
+    	<postconditions>
+    		<operator>
+    			<add-axioms>
+    				<axiom name="you're-a-monster!" />
+    			</add-axioms>
+    		</operator>
+    	</postconditions>
+    	<content type="conversation">
+    		<name>Friend?</name>
+    		<body>Greetings, this is Psycho Kid. Your "friend's" skin makes quite the comfortable suit. ♥</body>
+    	</content>
+    </task>
+    
+    <task name="the_scientist_branch">
+    	<preconditions>
+    		<axiom name="nuclear-meltdown-alert-received" />
+    	</preconditions>
+    	<methods>
+    		<method name="finding_the_scientist">
+    			<preconditions>
+    				<axiom name="scientist-found" />
+    			</preconditions>
+    		    <subtask name="conversation-get-help-from-scientist" /> <!--  -->
+   			 	<subtask name="belly-find-defuse-reward-bomb" />
+    		</method>
+    		<method name="a_msg_from_a_sciguy">
+    			<preconditions>
+    				<axiom name="avoiding-the-scientist" />
+    			</preconditions>
+    			<subtask name="unwanted_help_from_a_sciguy" /> <!--  -->
+   			 	<subtask name="belly-find-defuse-reward-bomb" />
+    		</method>
+    	</methods>
+    </task>
+    
+    <task name="unwanted_help_from_a_sciguy">
+    	<content type="conversation">
+    		<name>Dr. Science!</name>
+    		<body>Ah, good to find the number of a survivor. Unfortunately right now I can't be bothered, but may I ask you to head out to the nuclear power plant and switch it off for me? If you don't... I guess that's OK, but wasn't being alive fun?</body>
+    	</content>
+    </task>
+    
+    <task name="belly-find-defuse-reward-bomb">
+   	 <preconditions>
+ 		 <axiom name="bomb-alert-received" />
+ 	 </preconditions>
+   	 <methods>
+   		 <method name="belly-find-defuse-reward-bomb-method">
+   			 <subtask name="minigame-find-bomb" />
+   			 <subtask name="check_end_of_the_bomb_world" />
+   		 </method>
+   	 </methods>
+    </task>
+    
+    <task name="check_end_of_the_bomb_world">
+    	<preconditions>
+    		<axiom name="bomb_end" />
+    	</preconditions>
+    	<methods>
+    		<method name="the_regular_end_of_whatever">
+    			<preconditions>
+    				<axiom name="bomb-defused" />
+    			</preconditions>
+    			<subtask name="conversation-get-reward" />
+    		</method>
+    	</methods>
+    </task>
+
+    <task name="conversation-get-alert-terrorist-bomb">
+   	 <postconditions>
+   		 <operator>
+   			 <add-axioms>
+				 <axiom name="bomb-alert-received" />
+   			 </add-axioms>
+   		 </operator>
+   	 </postconditions>
+   	 <content type="conversation">
+         <name>Friend</name>
+         <body>Oh no a bomb is set to go off. Someone help those poor trapped people.</body>
+   	 </content>
+    </task>
+
+    <task name="minigame-find-bomb">
+   	 <preconditions>
+   	 	<axiom name="bomb-alert-received" ignore-params="true" />
+   	 </preconditions>
+   	 <postconditions>
+   		 <operator>
+   			 <add-axioms>
+				 <axiom name="bomb-found" />
+				 <axiom name="at-bomb-location" />
+				 <axiom name="bomb-defused" />
+				 <axiom name="bombghoulmoney" />
+				 <axiom name="bomb_end" />
+   			 </add-axioms>
+   			 <remove-axioms>
+   			 	 <axiom name="at-bomb-alert-location" ignore-params="true" />
+   			 </remove-axioms>
+   		 </operator>
+   		 <operator>
+   			 <add-axioms>
+				 <axiom name="bomb_end" />
+   			 </add-axioms>
+   			 <remove-axioms>
+   			 	 <axiom name="at-bomb-alert-location" ignore-params="true" />
+   			 </remove-axioms>
+   		 </operator>
+   		 <operator>
+   			 <add-axioms>
+				 <axiom name="bomb_end" />
+   			 </add-axioms>
+   			 <remove-axioms>
+   			 	 <axiom name="at-bomb-alert-location" ignore-params="true" />
+   			 </remove-axioms>
+   		 </operator>
+   	 </postconditions>
+   	 <content type="minigame">
+         <location id="The Bomb" desc="This place is the bomb! I mean, I can hear some ominous ticking over here..." />
+         <trigger at="The Bomb" />
+         <trigger wait="900" />
+         <trigger reply="skip" />
+   	 </content>
+    </task>
+    
+    <task name="conversation-get-reward">
+   	 <postconditions>
+   		 <operator>
+   			 <add-axioms>
+				 <axiom name="got-reward" ignore-params="true" />
+   			 	 <axiom name="money" />
+   			 	 <axiom name="moneyfood" />
+   			 	 <axiom name="bombghoulmoney" />
+   			 </add-axioms>
+   		 </operator>
+   	 </postconditions>
+   	 <content type="conversation">
+         <name>Friend</name>
+         <body>Yay! All the grateful people gave me money, food and candy for saving them.</body>
+   	 </content>
+    </task>
+    
+    <task name="conversation-get-alert-nuclear-meltdown">
+   	 <postconditions>
+   		 <operator>
+   			 <add-axioms>
+				 <axiom name="nuclear-meltdown-alert-received" />
+				 <axiom name="at-nuclear-meltdown-alert-location" />
+				 <axiom name="bomb-alert-received" />
+   			 </add-axioms>
+   		 </operator>
+   	 </postconditions>
+   	 <content type="conversation">
+         <name>Campus Emergency Network Broadcast</name>
+         <body>Oh no a nuclear meltdown is about to happen. Someone must find a way to stop it. Find a Scientist to come up with a plan.</body>
+   	 </content>
+    </task>
+    
+    <task name="minigame-find-scientist">
+   	 <preconditions>
+   	 	<axiom name="at-nuclear-meltdown-alert-location" />
+   	 	<axiom name="nuclear-meltdown-alert-received" />
+   	 </preconditions>
+   	 <postconditions>
+   		 <operator>
+   			 <add-axioms>
+				 <axiom name="scientist-found" />
+				 <axiom name="at-scientist-location" />
+   			 </add-axioms>
+   			 <remove-axioms>
+   			 	 <axiom name="at-nuclear-meltdown-alert-location" ignore-params="true" />
+   			 </remove-axioms>
+   		 </operator>
+   		 <operator>
+   		 	<add-axioms>
+   		 		<axiom name="avoiding-the-scientist" />
+   		 	</add-axioms>
+   		 </operator>
+   		 <operator>
+   		 	<add-axioms>
+   		 		<axiom name="avoiding-the-scientist" />
+   		 	</add-axioms>
+   		 </operator>
+   	 </postconditions>
+   	 <content type="minigame">
+        <location id="A Wandering Scientist" desc="I've heard reports of a man in a white lab coat around these parts" />
+        <trigger at="A Wandering Scientist" />
+        <trigger wait="900" />
+        <trigger reply="skip" />
+   	 </content>
+    </task>
+    
+    <task name="conversation-get-help-from-scientist">
+   	 <preconditions>
+   	 	 <axiom name="scientist-found" />
+		 <axiom name="at-scientist-location" />
+   	 </preconditions>
+   	 <postconditions>
+   		 <operator>
+   			 <add-axioms>
+				 <axiom name="got-scientist-help" />
+   			 </add-axioms>
+   		 </operator>
+   	 </postconditions>
+   	 <content type="conversation">
+         <name>The Man in a White Lab Coat</name>
+         <body>You just need to flip the switch in order to turn off a nuclear reactor.</body>
+   	 </content>
+    </task>
+
+	<task name="conversation-get-alert-psycho-kid">
+   	 <postconditions>
+   		 <operator>
+   			 <add-axioms>
+				 <axiom name="psycho-kid-alert-received" ignore-params="true" />
+				 <axiom name="at-psycho-kid-alert-location" ignore-params="true" />
+   			 </add-axioms>
+   		 </operator>
+   	 </postconditions>
+   	 <content type="conversation">
+         <name>Friend</name>
+         <body>Oh no a crazy kid is holding the class at gunpoint. Won't someone help them.</body>
+   	 </content>
+    </task>
+    
+    <task name="conversation-get-alert-friend-hostage">
+   	 <preconditions>
+   	 	<axiom name="psycho-kid-alert-received" />
+   	 </preconditions>
+   	 <postconditions>
+   		 <operator>
+   			 <add-axioms>
+				 <axiom name="friend-hostage-alert-received" />
+   			 </add-axioms>
+   		 </operator>
+   	 </postconditions>
+   	 <content type="conversation">
+         <name>Friend</name>
+         <body>I'm trapped inside the class with this psycho kid. Please hurry. Didn't you tell me about a tranquilizer gun you knew about on campus?</body>
+   	 </content>
+    </task>
+    
+    <task name="minigame-find-tranquilizer">
+   	 <preconditions>
+   	 	<axiom name="friend-hostage-alert-received" />
+   	 </preconditions>
+   	 <postconditions>
+   		 <operator>
+   			 <add-axioms>
+				 <axiom name="tranquilizer-found" />
+				 <axiom name="at-tranquilizer-location" />
+   			 </add-axioms>
+   			 <remove-axioms>
+   			 	 <axiom name="at-psycho-kid-alert-location" />
+   			 </remove-axioms>
+   		 </operator>
+   		 <operator>
+   		 	<add-axioms>
+   		 		<axiom name="ignoring-the-sweet-sweet-allure-of-a-tranq-gun" />
+   		 	</add-axioms>
+   		 </operator>
+   		 <operator>
+   		 	<add-axioms>
+   		 		<axiom name="ignoring-the-sweet-sweet-allure-of-a-tranq-gun" />
+   		 	</add-axioms>
+   		 </operator>
+   	 </postconditions>
+   	 <content type="minigame">
+        <location id="Tranquilizer Gun" desc="Ah yes, my old tranq gun. Man, we had some good times together..." />
+        <trigger at="Tranquilizer Gun" />
+        <trigger wait="900" />
+        <trigger reply="skip" />
+   	 </content>
+    </task>
+    
+    <task name="fight_the_psycho">
+    	<preconditions>
+    		<axiom name="psycho_v_tranq" />
+    	</preconditions>
+    	<methods>
+    		<method name="you_only_live_forever">
+    			<preconditions>
+    				<axiom name="psycho-kid-found" />
+    			</preconditions>
+    			<subtask name="convo-defeat-psycho-kid" /> <!--  -->
+	   			<subtask name="conversation-get-alert-psyho-kid-bomb" /> <!--  -->
+	   			<subtask name="belly-find-defuse-reward-bomb" />
+    		</method>
+    		<method name="you_only_abandon_your_friends">
+    			<preconditions>
+    				<axiom name="made_of_chicken_yellow_yellow_chicken" />
+    			</preconditions>
+    			<subtask name="convo-dude_comeon_and_help_me_already" />
+    		</method>
+    	</methods>
+    </task>
+    
+    <task name="minigame-find-psycho-kid">
+   	 <preconditions>
+   	 	<axiom name="tranquilizer-found" />
+   	 	<axiom name="at-tranquilizer-location" />
+   	 </preconditions>
+   	 <postconditions>
+   		 <operator>
+   			 <add-axioms>
+				 <axiom name="psycho-kid-found" />
+				 <axiom name="at-psycho-kid-location" />
+				 <axiom name="psycho_v_tranq" />
+   			 </add-axioms>
+   			 <remove-axioms>
+   			 	 <axiom name="at-tranquilizer-location" />
+   			 </remove-axioms>
+   		 </operator>
+   		 <operator>
+   			 <add-axioms>
+				 <axiom name="psycho_v_tranq" />
+				 <axiom name="made_of_chicken_yellow_yellow_chicken" />
+   			 </add-axioms>
+   			 <remove-axioms>
+   			 	 <axiom name="at-tranquilizer-location" />
+   			 </remove-axioms>
+   		 </operator>
+   		 <operator>
+   			 <add-axioms>
+				 <axiom name="psycho_v_tranq" />
+				 <axiom name="made_of_chicken_yellow_yellow_chicken" />
+   			 </add-axioms>
+   			 <remove-axioms>
+   			 	 <axiom name="at-tranquilizer-location" />
+   			 </remove-axioms>
+   		 </operator>
+   	 </postconditions>
+   	 <content type="minigame">
+         <location id="Psycho Kid" desc="There he is, the guy that's holding my dear friend hostage!" />
+         <trigger at="Psycho Kid" />
+         <trigger wait="900" />
+         <trigger reply="skip" />
+   	 </content>
+    </task>
+    
+    <task name="convo-defeat-psycho-kid">
+   	 <preconditions>
+   	 	<axiom name="at-psycho-kid-location" ignore-params="false" />
+   	 	<axiom name="tranquilizer-found" ignore-params="true" />
+   	 </preconditions>
+   	 <postconditions>
+   		 <operator>
+   			 <add-axioms>
+				 <axiom name="psycho-kid-sedated" ignore-params="true" />
+				 <axiom name="at-right-behind-psycho-kid-location" ignore-params="true" />
+   			 </add-axioms>
+   			 <remove-axioms>
+   			 	 <axiom name="at-psycho-kid-location" ignore-params="true" />
+   			 </remove-axioms>
+   		 </operator>
+   	 </postconditions>
+   	 <content type="conversation">
+         <name>The Bloodlust Inside of Me</name>
+         <body>As Psycho Kid's body falls to the floor I notice a single tear escape from his eye.</body>
+   	 </content>
+    </task>
+    
+    <task name="conversation-get-alert-psyho-kid-bomb">
+   	 <preconditions>
+   	 	<axiom name="psycho-kid-sedated" />
+		<axiom name="at-right-behind-psycho-kid-location" />
+   	 </preconditions>
+   	 <postconditions>
+   		 <operator>
+   			 <add-axioms>
+				 <axiom name="bomb-alert-received" />
+				 <axiom name="at-bomb-alert-location" />
+   			 </add-axioms>
+   			 <remove-axioms>
+   			 	 <axiom name="at-right-behind-psycho-kid-location" />
+   			 </remove-axioms>
+   		 </operator>
+   	 </postconditions>
+   	 <content type="conversation">
+         <name>Friend</name>
+         <body>Oh no that maniac told us he had planted a bomb somewhere around as insurance in case he was captured... What will we do? Someone help us!</body>
+   	 </content>
+    </task>
+    <!-- end (a belly whale) -->
+</quest>
+
+<quest name="BELLY PHONE">	
+	<!-- Belly phone quest -->
+	    <task name="belly-phone_damaged">
+		<preconditions>
+			<axiom name="candy" />
+		</preconditions>
+       <params>
+           <param id="location" />
+       </params>
+       <methods>
+           <method name="rad_pocket_damage">
+               <subtask name="conversation-phone_damaged_rad-pocket" />
+               <subtask name="find-phone-repair-object" />
+               <subtask name="conversation-phone_repaired" />
+           </method>
+           <method name="rad_pig_damage">
+               <subtask name="conversation-phone_damaged_pig" />
+               <subtask name="find-phone-repair-object" />
+               <subtask name="conversation-phone_repaired" />
+           </method>
+       </methods>
+   </task>
+
+   <task name="conversation-phone_damaged_rad-pocket">
+       <postconditions>
+           <operator>
+               <add-axioms>
+                   <axiom name="phone damaged"/>
+                   <axiom name="radiation poisoning"/>
+                   <axiom name="repair object clue"/>
+               </add-axioms>
+           </operator>
+		   
+       </postconditions>
+	   <content type="conversation">
+            <name>Self</name>
+            <body>Looks like a pocket of radiation has blown through here recently, damaging my phone...I'd better get this fixed asap!</body>
+		</content>
+   </task>
+   
+   <task name="conversation-phone_damaged_pig">
+       <postconditions>
+           <operator>
+               <add-axioms>
+                   <axiom name="phone damaged" />
+                   <axiom name="pork chop"/>
+                   <axiom name="repair object clue"/>
+               </add-axioms>
+           </operator>
+
+       </postconditions>
+	   <content type="conversation">
+            <name>Self</name>
+            <body>My God, a pig just ran by and damaged my phone.  I'd better get it fixed.</body>
+			</content>
+   </task>
+
+   <task name="find-phone-repair-object">
+       <params>
+           <param id="null" />
+       </params>
+       <preconditions>
+           <axiom name="phone damaged"/>
+        <axiom name="repair object clue"/>
+       </preconditions>
+       <methods>
+           <method name="find_man">
+				
+               <subtask name="minigame-find_phone_crazy_man" />
+			   <subtask name="meth-at-crazy-man" />
+           </method>
+           <method name="find_rad_away">
+               <subtask name="minigame-find_rad_away_kit" />
+			   <subtask name="meth-at-rad-away-kit" />
+           </method>
+           <method name="fix_phone_brick">
+               <subtask name="minigame-hit_phone_with_brick" />
+			   <subtask name="meth-at-hit-phone-with-brick" />
+           </method>
+       </methods>
+   </task>
+
+   <task name="minigame-find_phone_crazy_man">
+       <postconditions>
+           <operator>
+           <add-axioms>
+           		<axiom name="phone repair kit" />
+				<axiom name="at">
+					<param>crazy man's hut</param>
+				</axiom>
+           	</add-axioms>
+             <remove-axioms>
+                   <axiom name="repair object clue" />
+               </remove-axioms>
+           </operator>
+		   <operator>
+		   </operator>
+		   <operator>
+		   </operator>
+       </postconditions>
+	   <content type="minigame">
+            
+			<location id="crazy man's hut" />
+            <trigger near="crazy man's hut" />
+			<trigger wait="900" />
+			<trigger reply="skip"/>
+        </content>
+   </task>
+
+   	<task name="meth-at-crazy-man">
+		<preconditions>
+			<axiom name="at">
+                <param>crazy man's hut</param>
+            </axiom>
+		</preconditions>
+        <params>
+            <param id="" />
+        </params>
+        
+        <methods>
+		
+            <method name="meth-find-crazy-man">
+				<preconditions>
+					<axiom name="at">
+					<param>crazy man's hut</param>
+					</axiom>
+				</preconditions>
+                <subtask name="conversation-find-crazy-man" />
+			</method>
+        </methods>
+    </task>
+	
+	<task name="conversation-find-crazy-man">
+        <postconditions>
+            <operator>
+				<remove-axioms>
+					<axiom name="at" ignore-params="true" />
+                </remove-axioms>
+            </operator>
+
+        </postconditions>
+        <content type="conversation">
+            <name>Crazy Man</name>
+            <body>Welcome to my hut.  Give me your phone and I'll fix it, dfajfieaTEAFDAdafdkjsafejafEASFSD!</body>
+			<location id="crazy man's hut" />
+            <trigger near="crazy man's hut" />
+        </content>
+    </task>
+
+   
+   <task name="minigame-find_rad_away_kit">
+       <postconditions>
+           <operator>
+             <add-axioms>
+           		<axiom name="phone repair kit" />
+				<axiom name="at">
+					<param>rad cure center</param>
+				</axiom>
+           	</add-axioms>
+             <remove-axioms>
+                   <axiom name="repair object clue" />
+               </remove-axioms>
+           </operator>
+		   <operator>
+		   </operator>
+		   <operator>
+		   </operator>
+       </postconditions>
+	   <content type="minigame">
+            
+			<location id="rad cure center" />
+            <trigger near="rad cure center" />
+			<trigger wait="900" />
+			<trigger reply="skip"/>
+        </content>
+   </task>
+   
+   	<task name="meth-at-rad-away-kit">
+		<preconditions>
+			<axiom name="at">
+                <param>rad cure center</param>
+            </axiom>
+		</preconditions>
+        <params>
+            <param id="" />
+        </params>
+        
+        <methods>
+		
+            <method name="meth-find-rad-away-kit">
+				<preconditions>
+					<axiom name="at">
+					<param>rad cure center</param>
+					</axiom>
+				</preconditions>
+                <subtask name="conversation-find-rad-away-kit" />
+			</method>
+        </methods>
+    </task>
+	
+	<task name="conversation-find-rad-away-kit">
+        <postconditions>
+            <operator>
+				<remove-axioms>
+					<axiom name="at" ignore-params="true" />
+                </remove-axioms>
+            </operator>
+        </postconditions>
+        <content type="conversation">
+            <name>Self</name>
+            <body>Hey, this rad cure center has just what I need to fix my phone!</body>
+			<location id="rad cure center" />
+        </content>
+    </task>
+   
+   <task name="minigame-hit_phone_with_brick">
+       <postconditions>
+           <operator>
+           	<add-axioms>
+           		<axiom name="phone repair kit" />
+				<axiom name="at">
+					<param>brick pile</param>
+				</axiom>
+           	</add-axioms>
+             <remove-axioms>
+                   <axiom name="repair object clue" />
+               </remove-axioms>
+           </operator>
+		   <operator>
+		   </operator>
+		   <operator>
+		   </operator>
+       </postconditions>
+	   <content type="minigame">
+            
+			<location id="brick pile" />
+            <trigger near="brick pile" />
+			<trigger wait="900" />
+			<trigger reply="skip"/>
+        </content>
+   </task>
+   
+   <task name="meth-at-hit-phone-with-brick">
+		<preconditions>
+			<axiom name="at">
+                <param>brick pile</param>
+            </axiom>
+		</preconditions>
+        <params>
+            <param id="" />
+        </params>
+        
+        <methods>
+		
+            <method name="meth-find-hit-phone-with-brick">
+				<preconditions>
+					<axiom name="at">
+					<param>brick pile</param>
+					</axiom>
+				</preconditions>
+                <subtask name="conversation-find-hit-phone-with-brick" />
+			</method>
+        </methods>
+    </task>
+	
+	<task name="conversation-find-hit-phone-with-brick">
+        <postconditions>
+            <operator>
+				<remove-axioms>
+					<axiom name="at" ignore-params="true" />
+                </remove-axioms>
+            </operator>
+			<operator>
+			</operator>
+        </postconditions>
+        <content type="conversation">
+            <name>Self</name>
+            <body>Hmm, this brick looks useful.  Maybe if I crush my phone with it, it will work again...</body>
+			<location id="brick pile" />
+            <trigger near="brick pile" />
+			<trigger wait="900" />
+        </content>
+    </task>
+   
+   <task name="conversation-phone_repaired">
+       <preconditions>
+           <axiom name="phone damaged" />
+           <axiom name="phone repair kit" />
+       </preconditions>
+       <postconditions>
+           <operator>
+               <remove-axioms>
+                   <axiom name="phone damaged" />
+                   <axiom name="phone repair kit" />
+               </remove-axioms>
+           </operator>
+       </postconditions>
+	   <content type="conversation">
+            <name>Self</name>
+            <body>All right, my phone is back to normal!  Time to get back to finding a way out of this place.</body>
+			</content>
+   </task>
+</quest>
+
+<quest name="ROAD COPTER">   
+      <!-- ROAD OF TRIALS -->
+   <task name="road-helicopter">
+   		<preconditions>
+   			<axiom name="map" />
+   		</preconditions>
+        <methods>
+            <method name="gift-helicopter-method">
+                <subtask name="conversation-helicopter1" />
+                <subtask name="be-near-helicopter" />
+                <subtask name="the_flight_of_the_bumbling_copter" />
+                
+                <subtask name="conversation-helicopter2" />
+            </method>
+        </methods>
+    </task>
+    
+    <task name="the_flight_of_the_bumbling_copter">
+    	<preconditions>
+    		<axiom name="black_bird_down" />
+    	</preconditions>
+    	<methods>
+    		<method name="too_bad_so_sad">
+    			<preconditions>
+    				<axiom name="helicopter nearby" />
+    			</preconditions>
+    			<subtask name="conversation-helicopter2" />
+    			<subtask name="reap_the_benefits_of_a_dead_man" />
+    		</method>
+    	</methods>
+    </task>
+   
+    <task name="conversation-helicopter1">
+        <content type="conversation">
+            <name>What the Map Says</name>
+            <body>Hello? Yes this is map! Looks like this map tells gives the coordinates of a helicopter taking people to safety. Score!</body>
+        </content>
+    </task>
+    
+    <task name="reap_the_benefits_of_a_dead_man">
+    	<postconditions>
+    		<operator>
+    			<add-axioms>
+    				<axiom name="tool" />
+    				<axiom name="maptool" />
+    			</add-axioms>
+    		</operator>
+    	</postconditions>
+    	<content type="conversation">
+    		<name>The Sinking Feeling</name>
+    		<body>I can't believe that helicopter just blew up. I thought it was my ticket to safety. Well, maybe there's something useful in this debris. Hmm, some sort of tool, better than nothing... I hope.</body>
+    	</content>
+    </task>
+
+    <task name="conversation-helicopter2">
+        <postconditions>
+            <operator>
+                <remove-axioms>
+                    <axiom name="helicopter nearby" />
+                </remove-axioms>
+            </operator>
+        </postconditions>
+        <content type="conversation">
+            <name>A Faint Voice in the Distance</name>
+            <body>Oh no, I must be the worst pilot there ever was! I can't believe I pushed the red button! Argghhh, I'm exploding!!!!!</body>
+        </content>
+    </task>
+
+    <task name="be-near-helicopter">
+        <postconditions>
+            <operator>
+				<add-axioms>
+                    <axiom name="helicopter nearby" />
+					<axiom name="black_bird_down" />					
+                </add-axioms>
+                <remove-axioms>
+                    <axiom name="helicopter in sky" />
+					<axiom name="at" ignore-params="true" />
+                </remove-axioms>
+            </operator>
+            <operator>
+            	<add-axioms>
+            		<axiom name="black_bird_down" />
+            	</add-axioms>
+            </operator>
+            <operator>
+            	<add-axioms>
+            		<axiom name="black_bird_down" />
+            	</add-axioms>
+            </operator>
+        </postconditions>
+        <content type="minigame">
+            <location id="helicopter" />
+            <trigger near="helicopter" />
+            <trigger wait="900" />
+            <trigger reply="skip" />
+        </content>
+    </task>
+    
+   <!-- end (an amazhing helicopter ride) -->
+</quest>
+ 
+<quest name="MENTOR SCIENTIST">
+ 	<!-- MENTOR (the scientist) -->
+ 	
+ 	<task name="convo-come_on_down_money">
+ 		<content type="conversation">
+ 			<name>Sensei</name>
+ 			<body>I heard you've got some money. I'll give you some candy if you let me look at it.</body>
+ 		</content>
+ 	</task>
+ 	
+ 	<task name="welcome_to_megaton">
+ 		<preconditions>
+ 			<axiom name="at">
+ 				<param>office</param>
+ 			</axiom>
+ 		</preconditions>
+ 		<methods>
+ 			<method name="whatever_its_just_another_quest">
+ 				<preconditions>
+		 			<axiom name="at">
+		 				<param>office</param>
+		 			</axiom>
+		 		</preconditions>
+		 		<subtask name="convo-the_sensei_msg" />
+ 			</method>
+ 		</methods>
+ 	</task>
+ 	
+ 	<task name="convo-the_sensei_msg">
+ 		<postconditions>
+ 			<operator>
+ 				<add-axioms>
+ 					<axiom name="candy" />
+ 					<axiom name="candycat" />
+ 				</add-axioms>
+ 			</operator>
+ 		</postconditions>
+ 		<content type="conversation">
+ 			<name>Sensei</name>
+ 			<body>Yeah, those things you do are cool, but I'm cooler than you. I'll give you some candy, maybe with some more training you'll be more like me.</body>
+ 		</content>
+ 	</task>
+ 	
+ 	<task name="minigame-meet_your_bomb_sensei">
+ 		<postconditions>
+ 			<operator>
+ 				<add-axioms>
+ 					<axiom name="at">
+ 						<param>office</param>
+ 					</axiom>
+ 				</add-axioms>
+ 			</operator>
+ 			<operator />
+ 			<operator />
+ 		</postconditions>
+ 		<content type="minigame">
+ 			<location id="Sensei's Place" desc="I've always looked up to people named Sensei" />
+ 			<trigger at="Sensei's Place" />
+ 			<trigger wait="900" />
+ 			<trigger reply="skip" />
+ 		</content>
+ 	</task>
+ 	
+ 	<task name="convo-come_on_down_bomb">
+ 		<content type="conversation">
+ 			<name>Sensei</name>
+ 			<body>Hey, heard you're kinda good at defusing bombs. Stop by my office and I can show you a thing or two.</body>
+ 		</content>
+ 	</task>
+ 	
+ 	<task name="mentor-scientist-A">
+ 		<preconditions>
+ 			<axiom name="bombghoulmoney" />
+ 		</preconditions>
+ 		<methods>
+ 			<method name="a_cure_for_free">
+ 				<preconditions>
+		 			<axiom name="ghoulified" />
+		 		</preconditions>
+ 				<subtask name="convo-the_mentor_reaches_out_to_a_pitiful_ghoul" />
+ 				<subtask name="minigame-meet_your_sensei" />
+ 				<subtask name="the_milk_farm" />
+ 			</method>
+ 			<method name="the_money_guy">
+ 				<preconditions>
+		 			<axiom name="money" />
+		 		</preconditions>
+ 				<subtask name="convo-come_on_down_money" />
+ 				<subtask name="minigame-meet_your_bomb_sensei" />
+ 				<subtask name="welcome_to_megaton" />
+ 			</method>
+ 			<method name="the_bomg_guy">
+ 				<preconditions>
+		 			<axiom name="bomb-defused" />
+		 		</preconditions>
+ 				<subtask name="convo-come_on_down_bomb" />
+ 				<subtask name="minigame-meet_your_bomb_sensei" />
+ 				<subtask name="welcome_to_megaton" />
+ 			</method>
+ 		</methods>
+ 	</task>
+ 	
+ 	<task name="the_milk_farm">
+ 		<preconditions>
+ 			<axiom name="at">
+				<param>milk-farm</param>
+			</axiom>
+ 		</preconditions>
+ 		<methods>
+ 			<method name="free_healz">
+ 				<preconditions>
+		 			<axiom name="at">
+						<param>milk-farm</param>
+					</axiom>
+		 		</preconditions>
+		 		<subtask name="convo-milk_is_money" />
+ 			</method>
+ 		</methods>
+ 	</task>
+ 	
+ 	<task name="convo-milk_is_money">
+ 		<postconditions>
+ 			<operator>
+	 			<add-axioms>
+	 				<axiom name="not ghoul" />
+	 				<axiom name="candy" />
+	 				<axiom name="candycat" />
+	 			</add-axioms>
+	 			<remove-axioms>
+	 				<axiom name="ghoulified" />
+	 			</remove-axioms>
+	 		</operator>
+ 		</postconditions>
+ 		<content type="conversation">
+ 			<name>Louis Pasteur</name>
+ 			<body>Here you are, one tall glass of milk. Guarenteed to make you human again.
+ 			
+Also take this candy, looks like you need it more than I do.</body>
+ 		</content>
+ 	</task>
+ 	
+ 	<task name="minigame-meet_your_sensei">
+ 		<postconditions>
+ 			<operator>
+ 				<add-axioms>
+ 					<axiom name="at">
+ 						<param>milk-farm</param>
+ 					</axiom>
+ 				</add-axioms>
+ 				<remove-axioms>
+ 					<axiom name="at" ignore-params="true" />
+ 				</remove-axioms>
+ 			</operator>
+ 			<operator />
+ 			<operator />
+ 		</postconditions>
+ 		<content type="minigame">
+ 			<location id="Pasteur's Lab" desc="I should stop by Pasteur's Lab if I don't want to be a ghoul anymore" />
+ 			<trigger at="Pasteur's Lab" />
+ 			<trigger wait="900" />
+ 			<trigger reply="skip" />
+ 		</content>
+ 	</task>
+ 	
+ 	<task name="convo-the_mentor_reaches_out_to_a_pitiful_ghoul">
+ 		<content type="conversation">
+ 			<name>Louis Pasteur</name>
+ 			<body>My student, what has happened to you? Ha ha, I bet you haven't been drinking your milk! Ha, ha, ha!
+ 			
+ Seriously, my boy, you look dreadful, quite ghoulish, if I may say so. I've been recently researching the horrid mutations people get from radiation exposure, please stop by my lab and I'll heal you right up.</body>
+ 		</content>
+ 	</task>
+</quest>
+
+<quest name="MENTOR MILITARY">
+
+	<task name="mentor-military">
+        <preconditions>
+        	<axiom name="maptool" />
+        </preconditions>
+        <methods>
+            <method name="meet-military-method-map">
+            	<preconditions>
+            		<axiom name="map" />
+            	</preconditions>
+                <subtask name="conversation-military-message-map" />
+                <subtask name="minigame-be-at-HQ" />
+                <subtask name="go_to_californiaHQ" />
+            </method>
+            <method name="meet-military-method-tool">
+            	<preconditions>
+            		<axiom name="tool" />
+            	</preconditions>
+            	<subtask name="conversation-military-message-tool" />
+            	<subtask name="minigame-be-at-HQ-fo_realz" />
+            	<subtask name="go_to_the_other_hq" />
+            </method>
+        </methods>
+    </task>
+    
+    <task name="go_to_the_other_hq">
+    	<preconditions>
+    		<axiom name="general-skin" />
+    	</preconditions>
+    	<methods>
+    		<method name="chillin_at_base_broooooooooo">
+    			<preconditions>
+		    		<axiom name="at">
+		    			<param>HQ</param>
+		    		</axiom>
+		    	</preconditions>
+		    	<subtask name="convo-greetings_general_fo_realz" />
+		    	<subtask name="convo-the_general_replies_fo_realz" />
+    		</method>
+    	</methods>
+    </task>
+    
+    <task name="go_to_californiaHQ">
+    	<preconditions>
+    		<axiom name="general-skeleton" />
+    	</preconditions>
+    	<methods>
+    		<method name="chillin_at_base">
+    			<preconditions>
+		    		<axiom name="at">
+		    			<param>HQ</param>
+		    		</axiom>
+		    	</preconditions>
+		    	<subtask name="convo-greetings_general" />
+		    	<subtask name="convo-the_general_replies" />
+    		</method>
+    	</methods>
+    </task>
+    
+    <task name="convo-the_general_replies_fo_realz">
+    	<postconditions>
+    		<operator>
+    			<add-axioms>
+    				<axiom name="money" />
+    				<axiom name="moneyfood" />
+    				<axiom name="bombghouldmoney" />
+    			</add-axioms>
+    		</operator>
+    	</postconditions>
+    	<content type="conversation">
+    		<name>General Toolbag</name>
+    		<body>My beloved tool! You do not understand how much I appreciate this. I have been so depressed ever since I lost my tool. I am forever in your debt. That being so, it would be unfair to you to let you tag along with my brigade, really I should be tagging along with you. Unfortunately I do have a prior commitment to the military, so I'm going to have to send you on your way.
+    		
+No, no, don't look so sad. Here, have some money and go buy happiness!</body>
+    	</content>
+    </task>
+    
+    <task name="convo-the_general_replies">
+    	<postconditions>
+    		<operator>
+    			<add-axioms>
+    				<axiom name="money" />
+    				<axiom name="moneyfood" />
+    				<axiom name="bombghouldmoney" />
+    			</add-axioms>
+    		</operator>
+    	</postconditions>
+    	<content type="conversation">
+    		<name>General Skeleton</name>
+    		<body>The general does not reply because he is already a skeleton. You reach into his pocket, grabbing a fistfull of dollars.</body>
+    	</content>
+    </task>
+    
+    <task name="convo-greetings_general_fo_realz">
+    	<content type="conversation">
+    		<name>My Happiness to see Another Human Being</name>
+    		<body>Thank god I found this place, general. I'm here to return your tool. Please, please, let me tag along with you. I want to live!!</body>
+    	</content>
+    </task>
+    
+    <task name="convo-greetings_general">
+    	<content type="conversation">
+    		<name>My Happiness to see Another Human Being</name>
+    		<body>Thank god I found this place, general. Please, please, let me tag along with you. I want to live!!</body>
+    	</content>
+    </task>
+   
+	<task name="conversation-military-message-map">
+        <content type="conversation">
+            <name>Reading From the Map</name>
+            <body>There's some notes scrawled on the margins of the map: "Attention all survivors!  This is the military.  We're working on containing the situation.  For your safety, please proceed to our headquarters to recieve further instruction!"
+            
+Excellent, the location of the military HQ is circled.</body>
+        </content>
+    </task>
+    
+    <task name="conversation-military-message-tool">
+        <content type="conversation">
+            <name>You Notice Something on Your Tool</name>
+            <body>"Property of General Toolbag"
+            
+Maybe I should drop this tool off at my local military HQ?</body>
+        </content>
+    </task>
+    
+    <task name="minigame-be-at-HQ-fo_realz">
+		<postconditions>
+			<operator>
+				<add-axioms>
+					<axiom name="at">
+						<param>HQ</param>
+					</axiom>
+					<axiom name="general-skin" />
+				</add-axioms>
+			</operator>
+			<operator />
+			<operator />
+		</postconditions>
+        <content type="minigame">
+			<location id="HQ" desc="This is where it all happens." />
+            <trigger at="HQ" />
+            <trigger wait="900" />
+            <trigger reply="skip" />
+        </content>
+    </task>
+	
+	<task name="minigame-be-at-HQ">
+		<postconditions>
+			<operator>
+				<add-axioms>
+					<axiom name="at">
+						<param>HQ</param>
+					</axiom>
+					<axiom name="general-skeleton" />
+				</add-axioms>
+			</operator>
+			<operator />
+			<operator />
+		</postconditions>
+        <content type="minigame">
+			<location id="HQ" desc="This is where it all happens." />
+            <trigger at="HQ" />
+            <trigger wait="900" />
+            <trigger reply="skip" />
+        </content>
+    </task>
+
+</quest>
+
+<quest name="BIG BOSS BATTLE">
+	<!-- Big Boss Battle -->
+	<task name="boss-monster-or-dogs">
+		<preconditions>
+			<axiom name="porkchopfood" >
+			</axiom>
+		</preconditions>
+       <methods>
+           <method name="fight-monster-porkchop">
+		   
+				<preconditions>
+					<axiom name="porkchop" >
+					</axiom>
+				</preconditions>
+			
+               <subtask name="conversation-monster-roar" />
+			   <subtask name="conversation-talk-to-self"/>
+               <subtask name="meth-go-to-monster" />
+           </method>
+		   
+           <method name="fight-dogs-food">
+				<preconditions>
+					<axiom name="food" >
+					</axiom>
+				</preconditions>
+               <subtask name="conversation-dogs-howl" />
+			   <subtask name="conversation-talk-to-self-dogs"/>
+               <subtask name="meth-go-to-dogs" />
+           </method>
+		   
+       </methods>
+   </task>
+
+   <task name="conversation-monster-roar">
+		<preconditions>
+			<axiom name="porkchop" >
+			</axiom>
+		</preconditions>
+		<postconditions>
+			<operator>
+				<add-axioms>
+					<axiom name="heard-roar" />
+				</add-axioms>
+			</operator>
+		</postconditions>
+        <content type="conversation">
+            <name>Mysterious Sound</name>
+            <body>ROOOOOOAAAAAAAAAAAAAAAAAAAAR!</body>
+        </content>
+   </task>
+   
+   <task name="conversation-talk-to-self">
+		<preconditions>
+			<axiom name="porkchop" >
+			</axiom>
+			<axiom name="heard-roar" />
+		</preconditions>
+		<postconditions>
+			<operator>
+				<remove-axioms>
+					<axiom name="heard-roar" />
+				</remove-axioms>
+				<add-axioms>
+					<axiom name="talk-self" />
+				</add-axioms>
+			</operator>
+		</postconditions>
+       <content type="conversation">
+            <name>self</name>
+            <body>What was that?!  I'd better check it out.  Maybe it leads to a way out of here.</body>
+       </content>
+   </task>
+
+   <task name="meth-go-to-monster">
+		<preconditions>
+			<axiom name="talk-self" />
+		</preconditions>
+        <methods>
+           <method name="find_monster">
+				<preconditions>
+					<axiom name="talk-self" />
+				</preconditions>
+               <subtask name="minigame-go-to-monster" />
+			   <subtask name="meth-at-monster" />
+           </method>
+       </methods>
+   </task>
+
+   <task name="minigame-go-to-monster">
+		<preconditions>
+			
+			<axiom name="talk-self" />
+		</preconditions>
+       <postconditions>
+           <operator>
+			   <add-axioms>
+					<axiom name="at">
+						<param>mysterious sound</param>
+					</axiom>
+				</add-axioms>
+				<remove-axioms>
+					<axiom name="go-to-monster"/>
+				</remove-axioms>
+           </operator>
+		   <operator>
+		   </operator>
+		   <operator>
+		   </operator>
+       </postconditions>
+	   <content type="minigame">
+			<location id="mysterious sound" />
+            <trigger near="mysterious sound" />
+			<trigger wait="900" />
+			<trigger reply="skip"/>
+        </content>
+   </task>
+
+   	<task name="meth-at-monster">
+		<preconditions>
+			<axiom name="at">
+                <param>mysterious sound</param>
+            </axiom>
+		</preconditions>
+        <params>
+            <param id="" />
+        </params>
+        
+        <methods>
+		
+            <method name="meth-defeat-monster">
+				<preconditions>
+					<axiom name="at">
+					<param>mysterious sound</param>
+					</axiom>
+				</preconditions>
+				<subtask name="conversation-talk-to-self-2"/>
+                <subtask name="conversation-defeat-monster" />
+			</method>
+        </methods>
+    </task>
+	
+	<task name="conversation-talk-to-self-2">
+		<preconditions>
+			<axiom name="at">
+				<param>mysterious sound</param>
+			</axiom>
+		</preconditions>
+		<postconditions>
+			<operator>
+				<add-axioms>
+					<axiom name="attack">
+					</axiom>
+				</add-axioms>
+				<remove-axioms>
+					<axiom name="at" ignore-params="true" />
+				</remove-axioms>
+			</operator>
+		</postconditions>
+        <content type="conversation">
+            <name> self </name>
+			<body> My God, it's a giant radioactive monster!  I'd better use the porkchop I found earlier to lure it off the edge of the building it's on and to it's death! </body>
+        </content>
+    </task>
+
+	<task name="conversation-defeat-monster">
+		<preconditions>
+			<axiom name="attack">
+			</axiom>
+		</preconditions>
+        <postconditions>
+            <operator>
+				<remove-axioms>
+					<axiom name="attack"/>
+                </remove-axioms>
+				<add-axioms>
+					<axiom name="cat"/>
+					<axiom name="candycat"/>
+                </add-axioms>
+            </operator>
+
+        </postconditions>
+        <content type="conversation">
+            <name> self </name>
+			<body> It worked!  The Monster is dead!  Even though it never did anything wrong, I'm sure it was up to something. </body>
+        </content>
+    </task>
+   
+	<task name="conversation-dogs-howl">
+		<preconditions>
+			<axiom name="food" >
+			</axiom>
+		</preconditions>
+		<postconditions>
+			<operator>
+				<add-axioms>
+					<axiom name="heard-howl" />
+				</add-axioms>
+			</operator>
+		</postconditions>
+        <content type="conversation">
+            <name>Mysterious Howl</name>
+            <body>HOOOOOOOOOOOOOOOOOWWWWWWWWWWWL!</body>
+        </content>
+   </task>
+   
+   <task name="conversation-talk-to-self-dogs">
+		<preconditions>
+			<axiom name="heard-howl" />
+		</preconditions>
+		<postconditions>
+			<operator>
+				<remove-axioms>
+					<axiom name="heard-howl" />
+				</remove-axioms>
+				<add-axioms>
+					<axiom name="talk-self-dogs" />
+				</add-axioms>
+			</operator>
+		</postconditions>
+       <content type="conversation">
+            <name>self</name>
+            <body>What was that sound?!  I'd better check it out.  Maybe it leads to a way out of here.  It could lead to cookies.</body>
+       </content>
+   </task>
+
+   <task name="meth-go-to-dogs">
+		<preconditions>
+			<axiom name="talk-self-dogs" />
+		</preconditions>
+        <methods>
+           <method name="find_dogs">
+				<preconditions>
+					<axiom name="talk-self-dogs" />
+				</preconditions>
+               <subtask name="minigame-go-to-dogs" />
+			   <subtask name="meth-at-dogs" />
+           </method>
+       </methods>
+   </task>
+
+   <task name="minigame-go-to-dogs">
+		<preconditions>
+			
+			<axiom name="talk-self-dogs" />
+		</preconditions>
+       <postconditions>
+           <operator>
+			   <add-axioms>
+					<axiom name="at">
+						<param>mysterious howl</param>
+					</axiom>
+				</add-axioms>
+				<remove-axioms>
+					<axiom name="go-to-dogs"/>
+				</remove-axioms>
+           </operator>
+		   <operator>
+		   </operator>
+		   <operator>
+		   </operator>
+       </postconditions>
+	   <content type="minigame">
+			<location id="mysterious howl" />
+            <trigger near="mysterious howl" />
+			<trigger wait="900" />
+			<trigger reply="skip"/>
+        </content>
+   </task>
+
+   	<task name="meth-at-dogs">
+		<preconditions>
+			<axiom name="at">
+                <param>mysterious howl</param>
+            </axiom>
+		</preconditions>
+        <params>
+            <param id="" />
+        </params>
+        
+        <methods>
+		
+            <method name="meth-defeat-dogs">
+				<preconditions>
+					<axiom name="at">
+					<param>mysterious howl</param>
+					</axiom>
+				</preconditions>
+				<subtask name="conversation-talk-to-self-dogs-2"/>
+                <subtask name="conversation-defeat-dogs" />
+			</method>
+        </methods>
+    </task>
+	
+	<task name="conversation-talk-to-self-dogs-2">
+		<preconditions>
+			<axiom name="at">
+				<param>mysterious howl</param>
+			</axiom>
+		</preconditions>
+		<postconditions>
+			<operator>
+				<add-axioms>
+					<axiom name="attack-dogs">
+					</axiom>
+				</add-axioms>
+				<remove-axioms>
+					<axiom name="at" ignore-params="true" />
+				</remove-axioms>
+			</operator>
+		</postconditions>
+        <content type="conversation">
+            <name> self </name>
+			<body> My God, it's a pack of wild radioactive dogs!  I have this food I found earlier; I should use it to distract them as I make my escape! </body>
+        </content>
+    </task>
+
+	<task name="conversation-defeat-dogs">
+		<preconditions>
+			<axiom name="attack-dogs">
+			</axiom>
+		</preconditions>
+        <postconditions>
+            <operator>
+				<remove-axioms>
+					<axiom name="attack-dogs"/>
+                </remove-axioms>
+				<add-axioms>
+					<axiom name="cat"/>
+					<axiom name="candycat"/>
+                </add-axioms>
+            </operator>
+
+        </postconditions>
+        <content type="conversation">
+            <name> self </name>
+			<body> It worked!  The dogs are eating the distraction food!  Though I may starve, I'll live to starve another day! </body>
+        </content>
+    </task>
+</quest>
+
+</game-info>
+
+

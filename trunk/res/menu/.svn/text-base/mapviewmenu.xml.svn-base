@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+	<item android:id="@+id/MyLocationOption"
+		android:icon="@drawable/locationmarker"
+		android:title="My Location" />
+	
+	<item android:id="@+id/StopCheatingOption"
+		android:icon="@drawable/locationmarker"
+		android:title="Stop Cheating" />
+</menu>
