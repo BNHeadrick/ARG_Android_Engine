@@ -1,0 +1,4 @@
+ARG_Android_Engine
+==================
+
+An alternate reality game app for android that allows users to create and play alternate reality games.  Traditional alternate reality games are managed by human placed clues, or people, throughout an environment and can be time consuming.  This app aims to alleviate some of these issues.  This app is a fork of a previous application between myself, Mikhail Jacob, and Jeff Bernard.  Initially, the app used SHOP to manage quest order as well as the choice of which quest is to be executed.  This project will gut out the SHOP functionality in order to simplify quest creation and management for the end user.  The goal is to make an easy to understand and use game creator as well as an application to play ARGs.
