@@ -14,6 +14,7 @@ public class PuzzleActivity extends Activity {
 	Button bMapClick;
 	Button bConversationClick;
 	
+	@Override
 	public void onCreate(Bundle savedInstanceState) {
 
 		super.onCreate(savedInstanceState);
@@ -25,6 +26,7 @@ public class PuzzleActivity extends Activity {
 		
 		bMapClick.setOnClickListener(new OnClickListener() {
 			
+			@Override
 			public void onClick(View v) {
 				Intent ourIntent = new Intent(PuzzleActivity.this, RadiationMapActivity.class);
 		        startActivity(ourIntent);
@@ -35,6 +37,7 @@ public class PuzzleActivity extends Activity {
 		
 		bConversationClick.setOnClickListener(new OnClickListener() {
 			
+			@Override
 			public void onClick(View v) {
 				Intent ourIntent = new Intent(PuzzleActivity.this, ConversationActivity.class);
 		        startActivity(ourIntent);

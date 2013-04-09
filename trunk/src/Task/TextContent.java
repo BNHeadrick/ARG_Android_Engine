@@ -33,6 +33,7 @@ public class TextContent extends Content {
 		this.name = name;
 	}
 	
+	@Override
 	public String toString(){
 		return name+": "+body;
 	}

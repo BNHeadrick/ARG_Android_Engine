@@ -37,22 +37,26 @@ public class Axioms extends BaseKBObject{
 		hash.put(axiomName, axiomObject);
 	}
 	
+	@Override
 	public Axiom getItem(String key)
 	{
 		
 		return hash.get(key);
 	}
 	
+	@Override
 	public Set<String> getKeys()
 	{
 		return hash.keySet();
 	}
 	
+	@Override
 	public Object[] getKeysAsArray()
 	{
 		return hash.keySet().toArray();
 	}
 	
+	@Override
 	public int getLength(){
 		return hash.size();
 	}
@@ -61,6 +65,7 @@ public class Axioms extends BaseKBObject{
 //		return hash.
 //	}
 	
+	@Override
 	public Axiom getItemAtIndex(int i){
 		return getItem(getKeysAsArray()[i].toString());
 	}

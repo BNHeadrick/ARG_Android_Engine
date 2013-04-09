@@ -99,6 +99,7 @@ public class ConversationActivity extends Activity {
 		finish();
 	}
 
+	@Override
 	public void onCreate(Bundle savedInstanceState) {
 
 		super.onCreate(savedInstanceState);
@@ -117,6 +118,7 @@ public class ConversationActivity extends Activity {
 		
 		bMapClick.setOnClickListener(new OnClickListener() {
 			
+			@Override
 			public void onClick(View v) {
 				Intent ourIntent = new Intent(ConversationActivity.this, RadiationMapActivity.class);
 		        startActivity(ourIntent);
@@ -127,6 +129,7 @@ public class ConversationActivity extends Activity {
 		
 		bPuzzleClick.setOnClickListener(new OnClickListener() {
 			
+			@Override
 			public void onClick(View v) {
 				Intent ourIntent = new Intent(ConversationActivity.this, PuzzleActivity.class);
 		        startActivity(ourIntent);
@@ -135,6 +138,7 @@ public class ConversationActivity extends Activity {
 		
 		bSendMessage.setOnClickListener(new OnClickListener() {
 			
+			@Override
 			public void onClick(View v) {
 				displayMessage("", etNewMessageToSend.getText().toString(), null, "Send");
 				
@@ -152,6 +156,7 @@ public class ConversationActivity extends Activity {
 		});
 		
 		bCheckMessages.setOnClickListener(new OnClickListener(){
+			@Override
 			public void onClick(View v){
 				TaskTrigger.check(null, false);
 			}

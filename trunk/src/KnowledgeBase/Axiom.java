@@ -53,6 +53,7 @@ public class Axiom {
 		return false;
 	}
 	
+	@Override
 	public String toString(){
 		return name+params;
 		

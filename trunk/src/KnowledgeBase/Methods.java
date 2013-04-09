@@ -37,26 +37,31 @@ public class Methods extends BaseKBObject{
 		hash.put(methodName, methodObject);
 	}
 	
+	@Override
 	public Method getItem(String key)
 	{
 		
 		return hash.get(key);
 	}
 	
+	@Override
 	public Set<String> getKeys()
 	{
 		return hash.keySet();
 	}
 	
+	@Override
 	public Object[] getKeysAsArray()
 	{
 		return hash.keySet().toArray();
 	}
 	
+	@Override
 	public int getLength(){
 		return hash.size();
 	}
 	
+	@Override
 	public Method getItemAtIndex(int i){
 		return getItem(getKeysAsArray()[i].toString());
 	}

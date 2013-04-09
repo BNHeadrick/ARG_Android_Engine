@@ -50,6 +50,7 @@ public class TitleScreenActivity extends Activity implements View.OnClickListene
 		settings.setOnClickListener(this);
 	}
 	
+	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		switch (v.getId()){

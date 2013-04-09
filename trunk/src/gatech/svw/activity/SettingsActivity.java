@@ -27,6 +27,7 @@ public class SettingsActivity extends Activity
 		return timeLimit;
 	}
 
+	@Override
 	public void onCreate(Bundle savedInstanceState) {
 
 		super.onCreate(savedInstanceState);
@@ -40,6 +41,7 @@ public class SettingsActivity extends Activity
 		timeLimitField.setText(""+timeLimit);
 		timeLimitField.setInputType(InputType.TYPE_CLASS_NUMBER);
 		timeLimitField.setOnKeyListener(new OnKeyListener() {
+			@Override
 			public boolean onKey(View v, int keyCode, KeyEvent event) {
 				// If the event is a key-down event on the "enter" button
 				timeLimit = Integer.parseInt(timeLimitField.getText().toString());
@@ -56,6 +58,7 @@ public class SettingsActivity extends Activity
 		checkbox.setChecked(cheating);
 		checkbox.setText("Cheating: "+(cheating?"On":"Off"));
 		checkbox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+			@Override
 			public void onCheckedChanged(CompoundButton button, boolean isChecked) {
 				cheating = isChecked;
 				checkbox.setText("Cheating: "+(cheating?"On":"Off"));
@@ -65,6 +68,7 @@ public class SettingsActivity extends Activity
 		final Button questXMLBtn = (Button)findViewById(R.id.settingsChooseXML);
 		questXMLBtn.setText(questXML);
 		questXMLBtn.setOnClickListener(new OnClickListener() { // check for button press
+			@Override
 			public void onClick(View v) {
 //				Class newGameClass = null;
 //				try {

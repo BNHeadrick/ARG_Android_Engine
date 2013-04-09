@@ -120,6 +120,7 @@ public class RadiationMapActivity extends MapActivity implements View.OnClickLis
 		bConversation = (Button)findViewById(R.id.bConversation);
 		bConversation.setOnClickListener(new OnClickListener() {
 			
+			@Override
 			public void onClick(View v) {
 				//setContentView(R.layout.conversation_screen);
 				Intent ourIntent = new Intent(RadiationMapActivity.this, ConversationActivity.class);
@@ -130,6 +131,7 @@ public class RadiationMapActivity extends MapActivity implements View.OnClickLis
 		bPuzzle = (Button)findViewById(R.id.bMiniGames);
 		bPuzzle.setOnClickListener(new OnClickListener() {
 			
+			@Override
 			public void onClick(View v) {
 				Intent ourIntent = new Intent(RadiationMapActivity.this, PuzzleActivity.class);
 		        startActivity(ourIntent);
@@ -448,6 +450,7 @@ public class RadiationMapActivity extends MapActivity implements View.OnClickLis
 		return randomroute;
 	}
 
+	@Override
 	public void onClick(View v) {
 		switch(v.getId())
 		{

@@ -32,6 +32,7 @@ public class GPS
 		 * fires when the location has changed
 		 * @param location the changed location
 		 */
+		@Override
 		public void onLocationChanged(Location location)
 		{
 			lat = location.getLatitude();
@@ -62,6 +63,7 @@ public class GPS
 		 * fires when the location service has been shut off
 		 * @param provider the name of the location service
 		 */
+		@Override
 		public void onProviderDisabled(String provider)
 		{
 			Log.d("RAD", "provider off");
@@ -71,6 +73,7 @@ public class GPS
 		 * fires when the location service has been turned on
 		 * @param provider the name of the location service
 		 */
+		@Override
 		public void onProviderEnabled(String provider)
 		{
 			Log.d("RAD", "provider on");
@@ -82,6 +85,7 @@ public class GPS
 		 * @param status a status code
 		 * @param extras
 		 */
+		@Override
 		public void onStatusChanged(String provider, int status, Bundle extras)
 		{
 			Log.d("RAD", "status change");

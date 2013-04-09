@@ -41,26 +41,31 @@ public class Tasks extends BaseKBObject{
 		hash.put(taskName, taskObject);
 	}
 	
+	@Override
 	public Task getItem(String key)
 	{
 		
 		return hash.get(key);
 	}
 	
+	@Override
 	public Set<String> getKeys()
 	{
 		return hash.keySet();
 	}
 	
+	@Override
 	public Object[] getKeysAsArray()
 	{
 		return hash.keySet().toArray();
 	}
 	
+	@Override
 	public int getLength(){
 		return hash.size();
 	}
 	
+	@Override
 	public Task getItemAtIndex(int i){
 		return getItem(getKeysAsArray()[i].toString());
 	}

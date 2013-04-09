@@ -21,6 +21,7 @@ public class MinigameContent extends Content {
 			return name.equals(((Location)other).name);
 		}
 		
+		@Override
 		public String toString(){
 			return name;
 		}
@@ -61,6 +62,7 @@ public class MinigameContent extends Content {
 		triggerParam.add(param);
 	}
 	
+	@Override
 	public String toString(){
 		return "Location: "+location+"\n\tTrigger: "+triggerType+"("+triggerParam+")";
 	}

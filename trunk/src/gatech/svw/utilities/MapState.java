@@ -17,7 +17,7 @@ public class MapState {
 	
 //	private static MapController mcController;
 //	private static MapView mvMap;
-	private static GPS myGPS; 
+	private static GPS myGPS;
 //	private static int zoomLevel;
 	private static List<Overlay> mapOverlays;
 	private static RadItemizedOverlay locationoverlay;
