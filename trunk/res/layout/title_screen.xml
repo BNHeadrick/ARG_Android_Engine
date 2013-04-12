@@ -29,4 +29,11 @@
         android:layout_height="wrap_content"
         android:text="Settings" />
 
+    <Button
+        android:id="@+id/bAbout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="About"/>
+
 </LinearLayout>

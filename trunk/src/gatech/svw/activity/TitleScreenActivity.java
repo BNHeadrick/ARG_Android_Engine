@@ -13,7 +13,7 @@ import android.widget.TextView;
 public class TitleScreenActivity extends Activity implements View.OnClickListener {
 	/** Called when the activity is first created. */
 
-	Button newGame, settings;
+	Button newGame, settings, about;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -21,23 +21,8 @@ public class TitleScreenActivity extends Activity implements View.OnClickListene
 		super.onCreate(savedInstanceState);
 		@SuppressWarnings("unused")
 		TextView tv = new TextView(this);
-		setContentView(R.layout.title);
+		setContentView(R.layout.title_screen);
 		initializeVars();
-		
-		
-		
-
-		/*
-		Class ourClass = null;
-		try {
-			ourClass = Class.forName("gatech.svw.Test1");
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		Intent ourIntent = new Intent(TitleScreen.this, ourClass);
-		startActivity(ourIntent);
-		*/
 
 	}
 
@@ -45,9 +30,11 @@ public class TitleScreenActivity extends Activity implements View.OnClickListene
 		// TODO Auto-generated method stub
 		newGame = (Button) findViewById(R.id.bNewGame);
 		settings = (Button) findViewById(R.id.bSettings);
+		about = (Button) findViewById(R.id.bAbout);
 		Log.d("RAD", ""+settings);
 		newGame.setOnClickListener(this);
 		settings.setOnClickListener(this);
+		about.setOnClickListener(this);
 	}
 	
 	@Override
@@ -55,31 +42,19 @@ public class TitleScreenActivity extends Activity implements View.OnClickListene
 		// TODO Auto-generated method stub
 		switch (v.getId()){
 		case R.id.bNewGame:
-//			Class newGameClass = null;
-//			try {
-//				//newGameClass = Class.forName("gatech.svw.activity.RadiationMapActivity");
-//				//newGameClass = Class.forName("gatech.svw.activity.ConversationActivity");
-//				newGameClass = Class.forName("gatech.svw.activity.QuestDealerActivity");
-//			} catch (ClassNotFoundException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
+			Log.w("myApp", "newgame");
 			Intent intent = new Intent(TitleScreenActivity.this, QuestDealerActivity.class);
 			startActivity(intent);
-			
 			break;
 		case R.id.bSettings:
-			
-//			Class settingsClass = null;
-//			try {
-//				settingsClass = Class.forName("gatech.svw.activity.SettingsActivity");
-//			} catch (ClassNotFoundException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
+			Log.w("myApp", "settings");
 			Intent intent2 = new Intent(TitleScreenActivity.this, SettingsActivity.class);
 			startActivity(intent2);
-			
+			break;
+		case R.id.bAbout:
+			Log.w("myApp", "about");
+			Intent intentAbout = new Intent(TitleScreenActivity.this, AboutScreenActivity.class);
+			startActivity(intentAbout);
 		}
 		
 	}

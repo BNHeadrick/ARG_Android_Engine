@@ -11,22 +11,24 @@ public final class R {
     public static final class attr {
     }
     public static final class drawable {
-        public static final int helicopter=0x7f020000;
-        public static final int icon=0x7f020001;
-        public static final int locationmarker=0x7f020002;
-        public static final int minigame_screen=0x7f020003;
-        public static final int personmarker=0x7f020004;
-        public static final int pizza=0x7f020005;
-        public static final int popupbackground=0x7f020006;
-        public static final int puzzlemarker=0x7f020007;
-        public static final int radiationmarker=0x7f020008;
-        public static final int splash_background=0x7f020009;
-        public static final int treasuremarker=0x7f02000a;
-        public static final int unreadbackground=0x7f02000b;
+        public static final int about_screen_image=0x7f020000;
+        public static final int helicopter=0x7f020001;
+        public static final int icon=0x7f020002;
+        public static final int locationmarker=0x7f020003;
+        public static final int minigame_screen=0x7f020004;
+        public static final int personmarker=0x7f020005;
+        public static final int pizza=0x7f020006;
+        public static final int popupbackground=0x7f020007;
+        public static final int puzzlemarker=0x7f020008;
+        public static final int radiationmarker=0x7f020009;
+        public static final int splash_background=0x7f02000a;
+        public static final int treasuremarker=0x7f02000b;
+        public static final int unreadbackground=0x7f02000c;
     }
     public static final class id {
-        public static final int MyLocationOption=0x7f060018;
-        public static final int StopCheatingOption=0x7f060019;
+        public static final int MyLocationOption=0x7f060019;
+        public static final int StopCheatingOption=0x7f06001a;
+        public static final int bAbout=0x7f060018;
         public static final int bCheckMessages=0x7f060007;
         public static final int bClosePopUp=0x7f06000b;
         public static final int bConversation=0x7f060001;
@@ -53,13 +55,14 @@ public final class R {
         public static final int tvTitle=0x7f060010;
     }
     public static final class layout {
-        public static final int base_game_layout=0x7f030000;
-        public static final int conversation_screen=0x7f030001;
-        public static final int puzzle_screen=0x7f030002;
-        public static final int radiation_map_screen=0x7f030003;
-        public static final int settings=0x7f030004;
-        public static final int splash=0x7f030005;
-        public static final int title=0x7f030006;
+        public static final int about_screen=0x7f030000;
+        public static final int base_game_layout=0x7f030001;
+        public static final int conversation_screen=0x7f030002;
+        public static final int puzzle_screen=0x7f030003;
+        public static final int radiation_map_screen=0x7f030004;
+        public static final int settings_screen=0x7f030005;
+        public static final int splash_screen=0x7f030006;
+        public static final int title_screen=0x7f030007;
     }
     public static final class menu {
         public static final int mapviewmenu=0x7f050000;

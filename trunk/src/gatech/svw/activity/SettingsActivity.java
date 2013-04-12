@@ -33,7 +33,7 @@ public class SettingsActivity extends Activity
 		super.onCreate(savedInstanceState);
 		TextView tv = new TextView(this);
 		tv.setText("Hello, Android");
-		setContentView(R.layout.settings);
+		setContentView(R.layout.settings_screen);
 //		initializeVars();
 		
 		// check if we type in how long the game should be

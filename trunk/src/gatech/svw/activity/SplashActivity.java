@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.content.res.AssetManager;
 import android.os.Bundle;
 
-public class Splash extends Activity {
+public class SplashActivity extends Activity {
 
 //	MediaPlayer ourSound;
 	@Override
@@ -18,7 +18,7 @@ public class Splash extends Activity {
 		AssetManager assetManager = getAssets();		
 		FileCopier.copy("earlyInput.xml", assetManager);
 		
-		setContentView(R.layout.splash);
+		setContentView(R.layout.splash_screen);
 		
 		// copy default-quest to sd card
 		FileCopier.copy("default-quest.xml", getAssets());
@@ -30,24 +30,15 @@ public class Splash extends Activity {
 			
 			@Override
 			public void run(){
-//				Class ourClass = null;
 				try{
 					sleep(3000);
-					//ourClass = Class.forName("gatech.svw.activity.TitleScreenActivity");
 				} 
 				catch (InterruptedException ie){
 					ie.printStackTrace();
-//					
 				} 
-//				catch (ClassNotFoundException e) {
-//					// TODO Auto-generated catch block
-//					e.printStackTrace();
-//				}
-//				finally{
-					Intent ourIntent = new Intent(Splash.this, TitleScreenActivity.class);
-					
-                    startActivity(ourIntent);
-//				}
+				
+				Intent ourIntent = new Intent(SplashActivity.this, TitleScreenActivity.class);
+                startActivity(ourIntent);
 				
 			}
 		};

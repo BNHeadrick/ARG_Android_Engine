@@ -9,10 +9,10 @@
 	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 	<uses-permission android:name="android.permission.VIBRATE" />
 
-	<application android:icon="@drawable/icon" android:label="@string/app_name">
+	<application android:icon="@drawable/icon" android:label="@string/app_name" android:allowBackup="true">
 		<uses-library android:name="com.google.android.maps" android:required="true"/>
 
-		<activity android:name=".activity.Splash" android:label="@string/app_name">
+		<activity android:name=".activity.SplashActivity" android:label="@string/app_name">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
 				<category android:name="android.intent.category.LAUNCHER" />
@@ -28,6 +28,9 @@
 		</activity>
 		
 		<activity android:name=".activity.SettingsActivity" android:label="Settings Screen">
+		</activity>
+		
+		<activity android:name=".activity.AboutScreenActivity" android:label="About Screen" android:launchMode="singleTask">
 		</activity>
 		
 		<activity android:name=".activity.ListMenu" android:label="Choose Quest XML" />
